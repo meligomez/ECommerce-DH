@@ -6,42 +6,32 @@ header{
 }
 
 nav{
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  height: 90px;
+  align-items: center;
+  margin:0px;
+  padding: 0px;
 }
 
 .lista_titulo{
   list-style-type: none;
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  margin:0px 0px 0px 40px;
+  padding: 0px;
 }
 
 .lista_menu{
   list-style-type: none;
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
-  margin-left: 720px;
-}
-
-.log_in{
-  margin-right: 20px;
-}
-
-.sign_up{
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.asks{
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-
-.titulo{
-  margin-top: 32px;
-  margin-right: 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 40px 0px 0px;
+  padding: 0px;
+  width: 450px; 
 }
 
 ul a{
