@@ -107,3 +107,47 @@ font-size: 25px;
    margin-bottom: 20px;
  }
  /*TERMINA CSS REGISTRO DE USUARIO*/
+ .content{
+   text-align: center;
+ }
+ .formLogin{
+   padding-top: 10%;
+   background-color: white;
+   font-family: 'Karla', sans-serif;
+   /* opacity: 0.5; */
+   /* margin-top:30%; */
+   border-radius: 3%;
+ }
+
+ .content .userImg{
+   margin-top: 10%;
+   margin-bottom: -29px;
+ }
+ .formLogin .login{
+   margin-top: 5%;
+   display: block;
+   margin-left: 40%;
+   border:none;
+   background-color: #04042C;
+   color:white;
+   padding:2% 4%;
+   border-radius:11%;
+ }
+ .formLogin .nombre, .password{
+   border: solid 1px;
+   display: inline;
+   padding: 2%;
+   border-radius: 4%;
+ margin:15%;
+ }
+ .formLogin .inputPassLogin{
+   margin-top: 5%;
+   border: none;
+ }
+ .formLogin .inputNombreLogin{
+   margin-top: 10%;
+   border:none;
+ }
+#bodyLogin{
+    background-image: url('../img/back.jpg');
+}
