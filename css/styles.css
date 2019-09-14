@@ -130,11 +130,11 @@ font-size: 25px;
  }
  .formLogin .login{
    display: block;
-   margin-left: 27%;
+   margin-left: 24%;
    border:none;
    background-color: #04042C;
    color:white;
-   padding:2% 19%;
+   padding:2% 21%;
    border-radius:6%;
    color: rgba(255,255,255,.7);
  }
@@ -157,7 +157,7 @@ font-size: 25px;
  }
 #bodyLogin{
     background-image: url('../img/back.jpg');
-    background-size: 100%; 
+    background-size: 100%;
 }
 .forgotPsw{
   padding-top: 15%;
