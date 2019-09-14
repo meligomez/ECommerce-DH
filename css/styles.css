@@ -31,7 +31,7 @@ nav{
   align-items: center;
   margin: 0px 40px 0px 0px;
   padding: 0px;
-  width: 450px; 
+  width: 450px;
 }
 
 ul a{
@@ -42,7 +42,6 @@ ul a{
 
 main{
   background-color: #CAD2DC;
-  height: 2000px;
 }
 
 footer{
@@ -83,3 +82,28 @@ footer{
   width: 15%;
   display: inline-block;
 }
+/* REGISTRO DE USUARIO*/
+main {
+  padding-top:70px;
+}
+.registroDeUsuario input{
+  margin-left: 20px;
+}
+main .registroDeUsuario p label{
+margin-top: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: bold;
+font-size: 25px;
+}
+ .registroDeUsuario{
+     display:flex;
+     flex-direction:column;
+     justify-content:center;
+     align-items:center;
+ }
+ .botonRegistrar{
+   margin-bottom: 20px;
+ }
+ /*TERMINA CSS REGISTRO DE USUARIO*/
