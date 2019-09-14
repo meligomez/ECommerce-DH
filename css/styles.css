@@ -107,47 +107,67 @@ font-size: 25px;
    margin-bottom: 20px;
  }
  /*TERMINA CSS REGISTRO DE USUARIO*/
+ /*Inicio Estilo para login*/
  .content{
    text-align: center;
  }
  .formLogin{
-   padding-top: 10%;
+   padding-top: 14%;
    background-color: white;
    font-family: 'Karla', sans-serif;
    /* opacity: 0.5; */
    /* margin-top:30%; */
+  background-color: rgba(255,255,255,.7);
    border-radius: 3%;
  }
 
  .content .userImg{
    margin-top: 10%;
-   margin-bottom: -29px;
+   margin-bottom: -56px;
+   background-color: white;
+   border-radius: 45%;
+   padding:1%;
  }
  .formLogin .login{
-   margin-top: 5%;
    display: block;
-   margin-left: 40%;
+   margin-left: 27%;
    border:none;
    background-color: #04042C;
    color:white;
-   padding:2% 4%;
-   border-radius:11%;
+   padding:2% 19%;
+   border-radius:6%;
+   color: rgba(255,255,255,.7);
  }
  .formLogin .nombre, .password{
    border: solid 1px;
    display: inline;
    padding: 2%;
    border-radius: 4%;
- margin:15%;
+   margin:15%;
  }
  .formLogin .inputPassLogin{
    margin-top: 5%;
+   background-color: #ffffff00;
    border: none;
  }
  .formLogin .inputNombreLogin{
    margin-top: 10%;
+   background-color: #ffffff00;
    border:none;
  }
 #bodyLogin{
     background-image: url('../img/back.jpg');
 }
+.forgotPsw{
+  padding-top: 15%;
+  padding-bottom:3%;
+}
+.rememberMe{
+  padding-top: 3%;
+  position: absolute;
+}
+.labelrememberMe{
+  position: relative;
+  right: 12%;
+}
+/*Fin Estilo para login*/
