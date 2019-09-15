@@ -1,4 +1,13 @@
-/* START HEADER */
+/* ESTILOS UNICOS PARA home.html */
+.home{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../img/back_home.jpg");
+}
+/* Fin de estilado */
+
+
+/* HEADER START */
 header{
   background-color: #04042C;
   height: 90px;
@@ -6,7 +15,7 @@ header{
   position:fixed;
 }
 
-nav{
+header nav{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -35,17 +44,29 @@ nav{
   width: 450px;
 }
 
-ul a{
+.lista_titulo li a{
+  font-family: 'Great Vibes',cursive;
+  font-weight: normal;
+  color: white;
+  text-decoration: none;
+  font-size: 40px;
+}
+
+.lista_menu li a{
   text-decoration: none;
   color: white;
   font-weight: 700;
+  font-family: 'Dosis', sans-serif;
 }
-/* END HEADER */
+/* HEADER END */
 
-main{
-  background-color: #CAD2DC;
+/* MAIN START */
+.main_home{
+  flex: 1;
 }
+/* MAIN END */
 
+/* FOOTER START */
 footer{
   display: inline-block;
   border-top: 1px grey;
@@ -84,6 +105,8 @@ footer{
   width: 15%;
   display: inline-block;
 }
+/* FOOTER END */
+
 /* REGISTRO DE USUARIO*/
 main {
   padding-top:70px;
