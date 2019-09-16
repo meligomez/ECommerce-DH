@@ -1,21 +1,27 @@
-/* ESTILOS UNICOS PARA home.html */
+/*
+--------------------------------------------------------------
+ESTILOS UNICOS PARA home.html
+--------------------------------------------------------------
+*/
 .home{
   display: flex;
   flex-direction: column;
   padding: 0px;
   margin: 0px;
 }
-/* Fin de estilado */
 
 
-/* HEADER START */
+/*
+--------------------------------------------------------------
+HEADER
+--------------------------------------------------------------
+*/
 header{
   background-color: #04042C;
   height: 90px;
   width: 100%;
   position:fixed;
   opacity: 0.8;
-  z-index: 1;
 }
 
 header nav{
@@ -61,9 +67,14 @@ header nav{
   font-weight: 700;
   font-family: 'Dosis', sans-serif;
 }
-/* HEADER END */
+.lista_menu li a:hover{text-decoration: underline;color: white;}
 
-/* MAIN START */
+
+/*
+--------------------------------------------------------------
+MAIN
+--------------------------------------------------------------
+*/
 .main_home{
   display: flex;
   flex: 1;
@@ -74,48 +85,113 @@ header nav{
   padding: 0px;
   margin: 0px;
 }
-/* MAIN END */
 
-/* FOOTER START */
+
+/*
+--------------------------------------------------------------
+FOOTER
+--------------------------------------------------------------
+*/
 footer{
   display: flex;
+  flex-direction: column;
+  align-items: center;
   border-top: 1px grey;
   border-bottom: 1px grey;
   height: 300px;
   background-color: black;
   width: 100%;
+  padding: 30px;
 }
 
+.footer_info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
 .empresa{
-  width: 15%;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+}
+
+.empresa p a{
+  text-decoration: none;
+  color: grey;
+  font-family: 'Dosis', sans-serif;
+}
+.empresa p a:hover{color: white;font-family: 'Dosis', sans-serif;}
+.nosotros_footer{
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .ayuda{
-  width: 15%;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
 }
 
-.comunidad{
-  width: 15%;
-  display: inline-block;
+.ayuda p a{
+  text-decoration: none;
+  color: grey;
+  font-family: 'Dosis', sans-serif;
+}
+.ayuda p a:hover{text-decoration: none;color: white;font-family: 'Dosis', sans-serif;}
+.ayuda_footer{
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .categoria{
-  width: 15%;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+}
+.categoria p a{
+  text-decoration: none;
+  color: grey;
+  font-family: 'Dosis', sans-serif;
+}
+.categoria p a:hover{text-decoration: none;color: white;font-family: 'Dosis', sans-serif;}
+.categoria_footer{
+  font-weight: 700;
+  font-size: 20px;
 }
 
-.pagos{
-  width: 15%;
-  display: inline-block;
+.mpagos{
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+}
+.mpagos p a{
+  text-decoration: none;
+  color: grey;
+  font-family: 'Dosis', sans-serif;
+}
+.mpagos p a:hover{text-decoration: none;color: white;font-family: 'Dosis', sans-serif;}
+.mpagos_footer{
+  font-weight: 700;
+  font-size: 20px;
 }
 
-.anuncios{
-  width: 15%;
-  display: inline-block;
+.copyright{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-top: 0.5px solid white;
+  padding-top: 20px;
+  width: 100%
+
 }
-/* FOOTER END */
+.copyright p{
+  text-decoration: none;
+  color: grey;
+  font-family: 'Dosis', sans-serif;
+}
+.copyright p:hover{text-decoration: none;color: white;font-family: 'Dosis', sans-serif;}
+
 
 /* REGISTRO DE USUARIO*/
 main {
