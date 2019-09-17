@@ -3,16 +3,17 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Dosis|Great+Vibes&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Sin Nombre</title> <!Nombre a definir>
+  <link href="https://fonts.googleapis.com/css?family=Dosis|Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="../img/web_icon.ico">
+  <link rel="stylesheet" href="../css/styles.css">
+  <title>Registrarse</title>
 </head>
-<body>
+<body class="home">
   <header>
     <nav class="header_menu">
       <ul class="lista_titulo">
-        <li class="titulo"><a href="#">Lagard</a></li>
+        <li class="titulo"><a href="home.html">Lagard</a></li>
       </ul>
       <ul class="lista_menu">
         <li><a href="#">VEHICULOS</a></li>
@@ -21,13 +22,13 @@
         <li><a href="">NOSOTROS</a></li>
       </ul>
     </nav>
-
   </header>
-  <main>
+
+  <main class="main_registro">
 
       <form class="registroDeUsuario" action="registroDeUsuario.html">
        <p>
-         <label for="nombre">Nombre:<input id="nombre" class:"inputEspacio" type="text" name="nombre" value=""></label>
+         <label  for="nombre">Nombre:<input id="nombre" class:"inputEspacio" type="text" name="nombre" value=""></label>
        </p>
        <p>
          <label for="apellido">Apellido:<input id="apellido" class:"inputEspacio" type="text" name="apellido" value=""></label>
@@ -38,48 +39,43 @@
        <p>
          <label for="contraseña">Contraseña:<input id="contraseña" class:"inputEspacio"  type="password" name="Contraseña" value=""></label>
        </p>
-       <button class= "botonRegistrar" type="submit" name="button">Registrar</button>
+
     </form>
 
   </main>
+
+
   <footer>
-    <div class="empresa">
-      <p><a href="home.html">www.XXXXXX.com</a></p>
-      <p><a>Nosotros</a></p>
-      <p>Feedback</p>
-      <p>Mapa del sitio</p>
-      <p>Nuestras politicas</p>
-      <p>Politica de privacidad</p>
+    <div class="footer_info">
+      <div class="empresa">
+        <p><a href="#" class="nosotros_footer">Nosotros</a></p>
+        <p><a href="#">Nuestras politicas</a></p>
+        <p><a href="#">Feedback</a></p>
+        <p><a href="#">Mapa del sitio</a></p>
+        <p><a href="#">Politica de privacidad</a></p>
+      </div>
+      <div class="ayuda">
+        <p><a href="#" class="ayuda_footer">Ayuda</a></p>
+        <p><a href="#">Reservas y cancelaciones</a></p>
+        <p><a href="#">Contactenos</a></p>
+      </div>
+      <div class="categoria">
+        <p><a href="#" class="categoria_footer">Categorias</a></p>
+        <p><a href="#">cat-1</a></p>
+        <p><a href="#">cat-2</a></p>
+        <p><a href="#">cat-3</a></p>
+        <p><a href="#">cat-4</a></p>
+      </div>
+      <div class="mpagos">
+        <p><a href="#" class="mpagos_footer">Métodos de pago</a></p>
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+      </div>
     </div>
-    <div class="ayuda">
-      <p><a>Ayuda</a></p>
-      <p>Reservas y cancelaciones</p>
-      <p>Contactenos</p>
-    </div>
-    <div class="comunidad">
-      <p><a>Comunidad</a></p>
-      <p>Video catalogo</p>
-      <p>Blog</p>
-    </div>
-    <div class="categoria">
-      <p><a>Categorias</a></p>
-      <p>Item-a-completar</p>
-      <p>Item-a-completar</p>
-      <p>Item-a-completar</p>
-      <p>Item-a-completar</p>
-      <p>Item-a-completar</p>
-      <p>Item-a-completar</p>
-    </div>
-    <div class="pagos">
-      <p><a>Metodos de pago</a></p>
-      <img src="" alt="">
-      <img src="" alt="">
-      <img src="" alt="">
-      <img src="" alt="">
-    </div>
-    <div class="anuncios">
-      <p><a>Newsletter</a></p>
-      <p>Subscribete a nuestro newsletter</p>
+    <div class="copyright">
+      <p>© Copyright 2019 Largard SRL. Todos los derechos reservados.</p>
     </div>
   </footer>
 </body>
