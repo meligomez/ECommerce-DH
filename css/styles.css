@@ -55,7 +55,7 @@ header nav{
   align-items: center;
   margin: 0px 40px 0px 0px;
   padding: 0px;
-  width: 450px;
+  width: 650px;
 }
 
 .lista_titulo li a{
@@ -74,7 +74,10 @@ header nav{
 }
 .lista_menu li a:hover{text-decoration: underline;color: white;}
 
-
+.lista_menu li a img{
+  height: 30px;
+  width: 30px;
+}
 /*
 --------------------------------------------------------------
 MAIN
@@ -91,14 +94,50 @@ MAIN
   width: 100%;
 }
 
+.contenedor-titulo-autos{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  background-color: rgba(255, 255,255, 0.7);
+  width: 950px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.titulo-autos{
+  color: #2E2E2E;
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
 .bloque_autos{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 950px;
   background-color: rgba(255, 255,255, 0.5);
-  margin-top: 200px;
-  margin-bottom: 100px;
+}
+
+.contenedor-titulo-pickups{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  background-color: rgba(255, 255,255, 0.7);
+  width: 950px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.titulo-pickups{
+  color: #2E2E2E;
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+  font-weight: bolder;
 }
 
 .bloque_pickups{
@@ -110,13 +149,44 @@ MAIN
   margin-bottom: 100px;
 }
 
-.bloque_camionetas{
+.contenedor-titulo-van{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255,255, 0.7);
+  width: 950px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.titulo-van{
+  color: #2E2E2E;
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.bloque_van{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 950px;
   background-color: rgba(255, 255,255, 0.5);
   margin-bottom: 100px;
+}
+
+.card{
+  border: 10px grey solid;
+
+}
+.card-body{
+  background-color: grey;
+}
+
+.btn-primary{
+  background-color:green;
+  border: 1px green solid;
 }
 
 /*
