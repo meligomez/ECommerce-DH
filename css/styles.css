@@ -266,13 +266,37 @@ footer{
 .mpagos{
   display: flex;
   flex-direction: column;
-  justify-content: top;
+  justify-content:top;
+  align-items:center;
 }
 .mpagos p a{
   text-decoration: none;
   color: grey;
   font-family: 'Dosis', sans-serif;
 }
+
+.mpagos img{
+  height: 20px;
+  width: 35px;
+  padding-right:5px;
+  margin-top: 10px;
+}
+
+.tarjetas-1{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.ultima-tarjeta{
+  padding: 0;
+}
+
+.tarjetas-2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .mpagos p a:hover{text-decoration: none;color: white;font-family: 'Dosis', sans-serif;}
 .mpagos_footer{
   font-weight: 700;
