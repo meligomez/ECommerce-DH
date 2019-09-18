@@ -463,6 +463,36 @@ font-size: 25px;
   }
 }
 /*FIN RESPONSIVE LOGIN*/
+/*Inicio Preguntas Frecuentes*/
+.contentPregFrecuentes{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.preguntasFrecuentes{
+  display: flex;
+  padding-left: 3%;
+  flex-direction: row;
+  background-color:rgba(255, 255,255, 0.5);
+  color: black;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  font-family: 'Dosis', sans-serif;
+  text-align: center;
+  border-radius: 2%;
+}
+.preguntasFrecuentes ul,li{
+  display: block;
+}
+.preguntasFrecuentes li{
+  padding-bottom: 3%;
+}
+.preguntasFrecuentes a{
+  color:#1929a8;
+}
+/*Fin Preguntas Frecuentes*/
+
+
 /*
 ------------------------------------------
 A PARTIR DE ACA SE ESTILEA PARA RESPONSIVE
