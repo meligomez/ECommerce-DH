@@ -355,7 +355,10 @@ font-size: 25px;
  }
 
  /*TERMINA CSS REGISTRO DE USUARIO*/
- /*Inicio Estilo para login*/
+
+ /*********************************/
+ /****Inicio Estilo para login****/
+ /********************************/
  .divFormLogin{
    position:absolute;
  }
@@ -432,38 +435,14 @@ font-size: 25px;
 .formLogin .inputPassLogin:hover {outline:none;}
 .formLogin .inputPassLogin:active {outline:none;}
 .formLogin .inputPassLogin:focus {outline:none;}
-/*Fin Estilo para login*/
-/*RESPONSIVE LOGIN*/
-@media (min-width: 460px) 
-{
-.content .userImg {
-    width:25%;
-    margin-bottom: -17%;
-    margin-top: 3%;
-    position: relative;
-  }
-  .formLogin{
-    text-align:center;
-    padding-top: 15%;
-    position: initial;
-  }
-}
-@media (min-width: 700px) 
-{
-.content .userImg {
-    width:22%;
-    margin-bottom: -12%;
-    margin-top: 3%;
-    position: relative;
-  }
-  .formLogin{
-    text-align:center;
-    padding-top: 11%;
-    position: initial;
-  }
-}
-/*FIN RESPONSIVE LOGIN*/
-/*Inicio Preguntas Frecuentes*/
+ /*********************************/
+ /****Fin Estilo para login****/
+ /********************************/
+ 
+ /*********************************/
+/***Inicio Preguntas Frecuentes***/
+ /********************************/
+
 .contentPregFrecuentes{
   display: flex;
   flex-direction: row;
@@ -480,6 +459,7 @@ font-size: 25px;
   font-family: 'Dosis', sans-serif;
   text-align: center;
   border-radius: 2%;
+  font-size: 1.1em;
 }
 .preguntasFrecuentes ul,li{
   display: block;
@@ -490,10 +470,84 @@ font-size: 25px;
 .preguntasFrecuentes a{
   color:#1929a8;
 }
-/*Fin Preguntas Frecuentes*/
 
-
+ /*********************************/
+/***Fin Preguntas Frecuentes***/
+ /********************************/
 /*
+  /*****************************************************/
+ /****Inicio Responsive login y Preguntas Frecuentes****/
+ /*****************************************************/
+ @media (max-width: 459px) and (max-width: 460px)
+ {
+   .preguntasFrecuentes{
+     margin-left: 9%;
+     padding-right: 12%;
+     font-size: 0.9em;
+     align-items: center;
+     margin-top: 35%;
+   }
+ } 
+@media (min-width: 460px) and (max-width: 700px)
+{
+.content .userImg {
+    width:25%;
+    margin-bottom: -17%;
+    margin-top: 3%;
+    position: relative;
+  }
+  .formLogin{
+    text-align:center;
+    padding-top: 15%;
+    position: initial;
+  }
+  
+  .preguntasFrecuentes{
+    margin-left: 9%;
+    padding-right: 12%;
+  }
+}
+@media (min-width: 700px) and (max-width: 1024px) 
+{
+.content .userImg {
+    width:22%;
+    margin-bottom: -12%;
+    margin-top: 3%;
+    position: relative;
+  }
+  .formLogin{
+    text-align:center;
+    padding-top: 11%;
+    position: initial;
+  }
+  .preguntasFrecuentes{
+    margin-left: none;
+    padding-right: none;
+    font-size: 1em;
+    align-items: center;
+    margin-top: 17%;
+  }
+} 
+@media (min-width: 1024px) 
+{
+  .content .userImg {
+    width:22%;
+    margin-bottom: -12%;
+    margin-top: 3%;
+    position: relative;
+  }
+  .formLogin{
+    text-align:center;
+    padding-top: 11%;
+    position: initial;
+  }
+  
+} 
+
+/********************************************************/
+/****Fin Responsive para login y preguntas frecuentes****/
+/********************************************************/
+
 ------------------------------------------
 A PARTIR DE ACA SE ESTILEA PARA RESPONSIVE
 ------------------------------------------
