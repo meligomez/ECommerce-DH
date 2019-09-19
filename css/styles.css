@@ -444,6 +444,11 @@ main .registroDeUsuario p label{
   position: relative;
   right: 12%;
 }
+.goToHome{
+  color:black;
+  font-family: 'Karla', sans-serif;
+  color: #9393cf;
+}
 .formLogin .inputPassLogin:hover {outline:none;}
 .formLogin .inputPassLogin:active {outline:none;}
 .formLogin .inputPassLogin:focus {outline:none;}
