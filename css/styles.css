@@ -322,7 +322,7 @@ footer{
 
 /* REGISTRO DE USUARIO*/
 .main_registro{
-
+  font-family: 'Karla', sans-serif;
   background-image: url("../img/724.jpg");
   background-repeat: no-repeat;
   background-size:cover;
@@ -331,29 +331,41 @@ footer{
 }
 .registroDeUsuario input{
   margin-left: 20px;
+  background: none;
+  border-style:none;
+  border-bottom:solid 1px;
 }
 main .registroDeUsuario p label{
-
-margin-top: 50px;
-color:white;
-background-color: rgba(34, 34, 34, 0.5);
-border-radius: 8px;
-display: flex;
-align-items: center;
-justify-content: center;
-font-weight: bold;
-font-size: 25px;
+  margin-top: 35px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 25px;
 }
  .registroDeUsuario{
-     display:flex;
-     flex-direction:column;
-     justify-content:center;
-     align-items:center;
+   margin-top:5%;
+   background-color: rgba(255, 255,255, 0.5);
+   border-radius: 2%;
+   display:flex;
+   flex-direction:column;
+   justify-content:center;
+   align-items:center;
  }
  .botonRegistrar{
    margin-bottom: 20px;
  }
-
+.registroDeUsuario h2{
+  padding-top:4%;
+}
+.registroDeUsuario .inputRegistrar{
+  background-color: #04042C;
+  color:white;
+  margin-bottom:4%;
+  padding: 1% 20%;
+  border-radius:3%;
+}
  /*TERMINA CSS REGISTRO DE USUARIO*/
 
  /*********************************/
@@ -478,7 +490,7 @@ font-size: 25px;
   /*****************************************************/
  /****Inicio Responsive login y Preguntas Frecuentes****/
  /*****************************************************/
- @media (max-width: 459px) and (max-width: 460px)
+ @media (min-width: 100px) and (max-width: 460px)
  {
    .preguntasFrecuentes{
      margin-left: 9%;
@@ -487,6 +499,9 @@ font-size: 25px;
      align-items: center;
      margin-top: 35%;
    }
+   .registroDeUsuario input{
+    font-size: 85%;
+  }
  } 
 @media (min-width: 460px) and (max-width: 700px)
 {

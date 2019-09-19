@@ -1,10 +1,11 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Dosis|Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="../img/web_icon.ico">
   <link rel="stylesheet" href="../css/styles.css">
   <title>Lagard</title>
@@ -29,21 +30,29 @@
 
   <main class="main_registro">
 
-      <form class="registroDeUsuario" action="registroDeUsuario.html">
-       <p>
-         <label  for="nombre">Nombre:<input id="nombre" class:"inputEspacio" type="text" name="nombre" value=""></label>
-       </p>
-       <p>
-         <label for="apellido">Apellido:<input id="apellido" class:"inputEspacio" type="text" name="apellido" value=""></label>
-       </p>
-       <p>
-         <label for="email">E-mail:<input id="email" class:"inputEspacio" type="email" name="email" value=""></label>
-       </p>
-       <p>
-         <label for="contraseña">Contraseña:<input id="contraseña" class:"inputEspacio"  type="password" name="Contraseña" value=""></label>
-       </p>
-
-    </form>
+     <div class="content">
+        <div class="row">
+          <form class=" offset-lg-4 col-lg-4 registroDeUsuario" action="registroDeUsuario.html">
+            <h2>REGISTRO</h2>
+            <p>
+                <label  for="usuario">Usuario:<input id="usuario" class:"inputEspacio" type="text" name="usuario" placeholder="Ingrese un Usuario" value=""></label>
+              </p>
+            <p>
+              <label  for="nombre">Nombre:<input id="nombre" class:"inputEspacio" type="text" name="nombre" placeholder="Ingrese su nombre" value=""></label>
+            </p>
+            <p>
+              <label for="apellido">Apellido:<input id="apellido" class:"inputEspacio" type="text" name="apellido" placeholder="Ingrese su apellido" value=""></label>
+            </p>
+            <p>
+              <label for="email">E-mail:<input id="email" class:"inputEspacio" type="email" name="email" placeholder="Ingrese su mail" value=""></label>
+            </p>
+            <p>
+              <label for="contraseña">Contraseña:<input id="contraseña" class:"inputEspacio"  type="password" name="Contraseña" placeholder="Ingrese una contraseña" value=""></label>
+            </p>
+            <input class="inputRegistrar" type="submit" value="Registrarme"/>
+         </form>
+        </div>
+     </div>
 
   </main>
 
