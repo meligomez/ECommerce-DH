@@ -35,19 +35,24 @@
           <form class=" offset-lg-4 col-lg-4 registroDeUsuario" action="registroDeUsuario.html">
             <h2>REGISTRO</h2>
             <p>
-                <label  for="usuario">Usuario:<input id="usuario" class:"inputEspacio" type="text" name="usuario" placeholder="Ingrese un Usuario" value=""></label>
+                <label  for="usuario">Usuario:</label>
+                <input id="usuario" class:"inputEspacio" type="text" name="usuario" placeholder="Ingrese un Usuario" value=""  minlength="5">
               </p>
             <p>
-              <label  for="nombre">Nombre:<input id="nombre" class:"inputEspacio" type="text" name="nombre" placeholder="Ingrese su nombre" value=""></label>
+              <label  for="nombre">Nombre:</label>
+              <input id="nombre" class:"inputEspacio" type="text" name="nombre" placeholder="Ingrese su nombre" value="">
             </p>
             <p>
-              <label for="apellido">Apellido:<input id="apellido" class:"inputEspacio" type="text" name="apellido" placeholder="Ingrese su apellido" value=""></label>
+              <label for="apellido">Apellido:</label>
+              <input id="apellido" class:"inputEspacio" type="text" name="apellido" placeholder="Ingrese su apellido" value="">
             </p>
             <p>
-              <label for="email">E-mail:<input id="email" class:"inputEspacio" type="email" name="email" placeholder="Ingrese su mail" value=""></label>
+              <label for="email">E-mail:</label>
+              <input id="email" class:"inputEspacio" type="email" name="email" placeholder="Ingrese su mail" value="">
             </p>
             <p>
-              <label for="contraseña">Contraseña:<input id="contraseña" class:"inputEspacio"  type="password" name="Contraseña" placeholder="Ingrese una contraseña" value=""></label>
+              <label for="contraseña">Contraseña:</label>
+              <input id="contraseña" class:"inputEspacio"  type="password" name="Contraseña" placeholder="Ingrese una contraseña" value="" minlength="8" pattern=(?=\S{az})>
             </p>
             <input class="inputRegistrar" type="submit" value="Registrarme"/>
          </form>

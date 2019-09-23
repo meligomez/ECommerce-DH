@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<?php
+IF($_POST){
+
+}
+
+
+
+
+ ?>
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -12,7 +21,7 @@
   <div class="content">
     <div class="offset-lg-11 goToHome">
         <a href="home.html">Volver al Home</a>
-    </div> 
+    </div>
     <div class="row">
       <div class="divFormLogin">
         <img class="offset-lg-3 userImg" src="../img/Lagard3.png" alt="">
@@ -24,7 +33,7 @@
         </div>
         <div class="password">
           <img src="../img/lock.svg" alt="" width="6%">
-          <input class="inputPassLogin" type="password" name="password" value="" placeholder="Password">
+          <input class="inputPassLogin" type="password" name="password" value="" placeholder="Password"  >
         </div>
         <div class="col-12 rememberMe">
         <label class="labelrememberMe"><input type="checkbox" id="cbox1" value="first_checkbox"> Recordarme</label>
