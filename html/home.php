@@ -10,23 +10,8 @@
   <title>Lagard</title>
 </head>
 <body class="home">
-  <header>
-    <nav class="header_menu">
-      <ul class="lista_titulo">
-        <li class="titulo"><a href="home.html">Lagard</a></li>
-      </ul>
-      <ul class="lista_menu">
-        <li><a href="#">VEHICULOS</a></li>
-        <li><a href="#">ACCESORIOS</a></li>
-        <li><a href="login.html">INGRESA</a></li>
-        <li><a href="registroDeUsuarios.html">REGISTRATE</a></li>
-        <li><a href="">NOSOTROS</a></li>
-        <li><a href=""><img src="../img/carrito.png" alt="carro-de-compras"></a></li>
-        <li><a href=""><img src="../img/settings.png" alt="configuracion"></a></li>
-      </ul>
-    </nav>
-  </header>
 
+<?php include_once("header.php") ?>
   <main class="main_home">
     <div class="contenedor-titulo-autos">
       <p class="titulo-autos">Autos</p>
@@ -116,47 +101,7 @@
       </div>
     </div>
   </main>
+<?php include_once("footer.php") ?>
 
-  <footer>
-    <div class="footer_info">
-      <div class="empresa">
-        <p><a href="#" class="nosotros_footer">Nosotros</a></p>
-        <p><a href="#">Nuestras politicas</a></p>
-        <p><a href="#">Feedback</a></p>
-        <p><a href="#">Mapa del sitio</a></p>
-        <p><a href="#">Politica de privacidad</a></p>
-      </div>
-      <div class="ayuda">
-        <p><a href="#" class="ayuda_footer">Ayuda</a></p>
-        <p><a href="#">Reservas y cancelaciones</a></p>
-        <p><a href="#">Contactenos</a></p>
-        <p><a href="preguntasFrecuentes.html">Preguntas frecuentes</a></p>
-      </div>
-      <div class="categoria">
-        <p><a href="#" class="categoria_footer">Categorias</a></p>
-        <p><a href="#">Autos</a></p>
-        <p><a href="#">Pickups</a></p>
-        <p><a href="#">Vans</a></p>
-      </div>
-      <div class="mpagos">
-        <div>
-        <p><a href="#" class="mpagos_footer">Métodos de pago</a></p>
-        </div>
-        <div class="tarjetas-1">
-        <img src="../img/visa.png" alt="visa">
-        <img src="../img/visa-e.png" alt="visa-electron">
-        <img class="ultima-tarjeta" src="../img/amex.png" alt="amex">
-        </div>
-        <div class="tarjetas-2">
-        <img src="../img/master.png" alt="master-card">
-        <img src="../img/maestro.png" alt="maestro">
-        <img class="ultima-tarjeta" src="../img/paypal.png" alt="paypal">
-        </div>
-      </div>
-    </div>
-    <div class="copyright">
-      <p>© Copyright 2019 Largard SRL. Todos los derechos reservados.</p>
-    </div>
-  </footer>
 </body>
 </html>

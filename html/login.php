@@ -17,15 +17,16 @@ IF($_POST){
     <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
+  <?php include_once("header.php") ?>
   <body id="bodyLogin">
   <div class="content">
     <div class="offset-lg-11 goToHome">
-        <a href="home.html">Volver al Home</a>
+        <a href="home.php">Volver al Home</a>
     </div>
     <div class="row">
       <div class="divFormLogin">
         <img class="offset-lg-3 userImg" src="../img/Lagard3.png" alt="">
-        <form class="offset-lg-5 col-lg-5 offset-sm-3 col-sm-6 offset-xs-3 col-xs-6 formLogin" action="home.html" method="post">
+        <form class="offset-lg-5 col-lg-5 offset-sm-3 col-sm-6 offset-xs-3 col-xs-6 formLogin" action="" method="post">
         <h1>Sign In</h1>
         <div class="nombre">
           <img src="../img/user.svg" alt="" width="6%">
@@ -44,7 +45,7 @@ IF($_POST){
         </div>
         </form>
         <div class="offset-lg-3 offset-sm-1 offset-xs-1 footerLogin">
-        ¿No tenés cuenta? <a href="registroDeUsuarios.html">Registrarme</a>
+        ¿No tenés cuenta? <a href="registroDeUsuarios.php">Registrarme</a>
         </div>
       </div>
     </div>
@@ -52,5 +53,7 @@ IF($_POST){
 
     </div>
   </div>
+
   </body>
+
 </html>
