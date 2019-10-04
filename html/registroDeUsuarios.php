@@ -1,7 +1,17 @@
 <?php
+// inicializo las variables para errores
+$errorUsuario = "";
+$errorNombreYApellido = "";
+$errorEmail = "";
+$errorContrasenia = "";
+
 //Validamos que lleguen datos
 if($_POST)
 {
+  // creo una variable para ver si hay errores
+  $errores = false;
+  //valido de datos
+  if
   //nos guardarmos los datos del post en un array
   $usuario=[
     "usuario" => $_POST["usuario"],
@@ -50,15 +60,15 @@ if($_POST)
             <h2>REGISTRO</h2>
             <p>
                 <label  for="usuario">Usuario:</label>
-                <input id="usuario" class:"inputEspacio" type="text" name="usuario" placeholder="Ingrese un Usuario" value=""  minlength="5">
+                <input id="usuario" class:"inputEspacio" type="text" name="usuario" placeholder="Ingrese un Usuario" value="">
               </p>
             <p>
               <label  for="nombre">Nombre:</label>
-              <input id="nombre" class:"inputEspacio" type="text" name="nombre" placeholder="Ingrese su nombre" value=""  minlength="1" maxlength="30">
+              <input id="nombre" class:"inputEspacio" type="text" name="nombre" placeholder="Ingrese su nombre" value="">
             </p>
             <p>
               <label for="apellido">Apellido:</label>
-              <input id="apellido" class:"inputEspacio" type="text" name="apellido" placeholder="Ingrese su apellido" value="" minlength="1" maxlength="30">
+              <input id="apellido" class:"inputEspacio" type="text" name="apellido" placeholder="Ingrese su apellido" value="">
             </p>
             <p>
               <label for="email">E-mail:</label>
@@ -66,7 +76,7 @@ if($_POST)
             </p>
             <p>
               <label for="contraseña">Contraseña:</label>
-              <input id="contraseña" class:"inputEspacio"  type="password" name="Contraseña" placeholder="Ingrese una contraseña" value="" minlength="8" pattern=(?=\S{az})>
+              <input id="contraseña" class:"inputEspacio"  type="password" name="Contraseña" placeholder="Ingrese una contraseña" value="">
             </p>
             <input class="inputRegistrar" type="submit" value="Registrarme"/>
          </form>
