@@ -5,34 +5,76 @@ $errorNombreYApellido = "";
 $errorEmail = "";
 $errorContrasenia = "";
 
-//Validamos que lleguen datos
+//Inicio de validacion de datos de los input
 if($_POST)
 {
   // creo una variable para ver si hay errores
   $errores = false;
-  //valido de datos
-  if
-  //nos guardarmos los datos del post en un array
-  $usuario=[
-    "usuario" => $_POST["usuario"],
-    "nombre" => $_POST["nombre"],
-    "apellido" => $_POST["apellido"],
-    "email" => $_POST["email"],
-    "Contraseña" =>  password_hash($_POST["Contraseña"],PASSWORD_DEFAULT)
-  ];
 
-  //traigo los usuarios del json
+   if($_POST["usuario"] == ""){
+      $errorUsuario = "Ingrese un nombre de usuario";
+      $errores = true;
+  }else if(strlen($_POST["usuario"]) < 2){
+      $errorUsuario = "Su nombre de usuario debe tener al menos 2 caracteres";
+      $errores = true;
+  }
+  if($_POST["nombreYapellido"] == ""){
+    $errorNombreYApellido = "Ingrese un nombre y apellido";
+    $errores = true;
+    }else if(strlen($_POST["nombreYapellido"]) < 4){
+      $errorNombreYApellido = "Su nombre y apellido deben tener al menos 4 caracteres";
+      $errores = true;
+  }
+  if($_POST["email"] == ""){
+    $errorEmail = "Ingrese un e-mail";
+    $errores = true;
+    }else if(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
+      $errorEmail = "Debe escribir un mail correcto";
+      $errores = true;
+  }
+  if($_POST["contrasenia"] == "" || $_POST["contraseniaConfirma"] == ""){
+      $errorContrasenia = "No puede estar en blanco";
+      $errores = true;
+  }else if($_POST["contrasenia"] != $_POST["contraseniaConfirma"]){
+      $errorContrasenia = "Las contrasenias deben coincidir";
+      $errores = true;
+  }else{
+      $contrasenia = password_hash($_POST["contrasenia"],PASSWORD_DEFAULT);
+      //echo md5($_POST["password"]);
+  }
+//fin de validaciones de datos
 
-  $usuariosEnJSON = file_get_contents("..\json\usuarios.json");
-  //convierto el json en array
-  $usuarios = json_decode($usuariosEnJSON);
-  //agrego el nuevo usuario al array de la base de datos
-  $usuarios[] = $usuario;
-  //convierto el nuevo array completo a json
-  $nuevosUsuariosEnJSON = json_encode($usuarios);
-  //escribo el nuevo json en el archivo .json
-  file_put_contents("usuarios.json",$nuevosUsuariosEnJSON);
+//inicio persistencia en JSON.
+//primero valido si no hay ningun error
+if(!$errores)
+{
+//nos guardarmos los datos del post en un array
+$usuario=[
+  "id"=> md5($_POST["usuario"]),
+  "usuario" => $_POST["usuario"],
+  "nombreYapellido" => $_POST["nombreYapellido"],
+  "email" => $_POST["email"],
+  "fotoPerfil"=>$_POST["fotoPerfil"],
+  "contrasenia" =>  $contrasenia
+];
+//traigo los usuarios del json
 
+$usuariosEnJSON = file_get_contents("..\json\usuarios.json");
+
+//convierto el json en array
+$usuarios = json_decode($usuariosEnJSON);
+//agrego el nuevo usuario al array de la base de datos
+$usuarios[] = $usuario;
+//convierto el nuevo array completo a json
+$nuevosUsuariosEnJSON = json_encode($usuarios);
+
+//escribo el nuevo json en el archivo .json
+file_put_contents("..\json\usuarios.json",$nuevosUsuariosEnJSON);
+echo "alert('Se registró correctamente')";
+exit;
+}
+  
+  
 }
 
 
@@ -56,30 +98,33 @@ if($_POST)
 
      <div class="content">
         <div class="row">
-          <form class=" offset-lg-4 col-lg-4 registroDeUsuario" action="" method="POST">
+          <form class=" offset-lg-4 col-lg-4 registroDeUsuario" action="" method="POST" enctype="multipart/form-data">
             <h2>REGISTRO</h2>
             <p>
-                <label  for="usuario">Usuario:</label>
-                <input id="usuario" class:"inputEspacio" type="text" name="usuario" placeholder="Ingrese un Usuario" value="">
+                <img src="../img/user.svg" alt="" width="6%">
+                <input  <?php echo $errorUsuario!=""?"class='inputValidar'":""; ?>  id="usuario" class="inputEspacio" type="text" name="usuario" placeholder="Ingrese un Usuario" value="">
               </p>
             <p>
-              <label  for="nombre">Nombre:</label>
-              <input id="nombre" class:"inputEspacio" type="text" name="nombre" placeholder="Ingrese su nombre" value="">
+              <img src="../img/card.svg" alt="" width="6%">
+              <input  <?php echo $errorNombreYApellido!=""?"class='inputValidar'":""; ?> id="nombreYapellido" class="inputEspacio" type="text" name="nombreYapellido" placeholder="Ingrese su nombre y apellido" value="">
             </p>
             <p>
-              <label for="apellido">Apellido:</label>
-              <input id="apellido" class:"inputEspacio" type="text" name="apellido" placeholder="Ingrese su apellido" value="">
+              <img src="../img/email.svg" alt="" width="6%">
+              <input <?php echo $errorEmail!=""?"class='inputValidar'":""; ?> id="email" class="inputEspacio" type="email" name="email" placeholder="Ingrese su mail" value="">
             </p>
             <p>
-              <label for="email">E-mail:</label>
-              <input id="email" class:"inputEspacio" type="email" name="email" placeholder="Ingrese su mail" value="">
+            <input type="file" name="fotoPerfil" placeholder="Ingrese su foto de perfil">
+           <p>
+            <p>
+              <img src="../img/lock.svg" alt="" width="6%">
+              <input <?php echo $errorContrasenia!=""?"class='inputValidar''":""; ?> id="contrasenia" class="inputEspacio"  type="password" name="contrasenia" placeholder="Ingrese una contraseña" value="">
             </p>
             <p>
-              <label for="contraseña">Contraseña:</label>
-              <input id="contraseña" class:"inputEspacio"  type="password" name="Contraseña" placeholder="Ingrese una contraseña" value="">
+              <img src="../img/lock.svg" alt="" width="6%">
+              <input <?php echo $errorContrasenia!=""?"class='inputValidar'":""; ?> id="contraseniaConfirma" class="inputEspacio"  type="password" name="contraseniaConfirma" placeholder="Reingrese la contraseña" value="">
             </p>
             <input class="inputRegistrar" type="submit" value="Registrarme"/>
-         </form>
+         </form>  
         </div>
      </div>
 

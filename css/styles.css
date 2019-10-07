@@ -6,7 +6,7 @@ ESTILOS UNICOS PARA home.html
 .home{
   display: flex;
   flex-direction: column;
-  background-image: url("../img/back_home.jpg");
+  background-color: #bfbfbf;
   background-repeat: no-repeat;
   background-size:cover;
   background-attachment: fixed;
@@ -100,7 +100,7 @@ MAIN
   justify-content: center;
   align-items: center;
   margin-top: 200px;
-  background-color: rgba(255, 255,255, 0.7);
+  /* background-color: rgba(255, 255,255, 0.7); */
   width: 950px;
   border-radius: 10px 10px 0px 0px;
 }
@@ -111,6 +111,7 @@ MAIN
   padding: 0;
   font-size: 30px;
   font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .bloque_autos{
@@ -118,7 +119,8 @@ MAIN
   flex-direction: row;
   justify-content: space-between;
   width: 950px;
-  background-color: rgba(255, 255,255, 0.5);
+  /* background-color: rgba(255, 255,255, 0.5); */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .contenedor-titulo-pickups{
@@ -127,7 +129,7 @@ MAIN
   justify-content: center;
   align-items: center;
   margin-top: 100px;
-  background-color: rgba(255, 255,255, 0.7);
+  /* background-color: rgba(255, 255,255, 0.7); */
   width: 950px;
   border-radius: 10px 10px 0px 0px;
 }
@@ -138,6 +140,7 @@ MAIN
   padding: 0;
   font-size: 30px;
   font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .bloque_pickups{
@@ -145,8 +148,9 @@ MAIN
   flex-direction: row;
   justify-content: space-between;
   width: 950px;
-  background-color: rgba(255, 255,255, 0.5);
+  /* background-color: rgba(255, 255,255, 0.5); */
   margin-bottom: 100px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .contenedor-titulo-van{
@@ -154,8 +158,9 @@ MAIN
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255,255, 0.7);
+  /* background-color: rgba(255, 255,255, 0.7); */
   width: 950px;
+  font-family: 'Montserrat', sans-serif;
   border-radius: 10px 10px 0px 0px;
 }
 
@@ -172,8 +177,9 @@ MAIN
   flex-direction: row;
   justify-content: space-between;
   width: 950px;
-  background-color: rgba(255, 255,255, 0.5);
+  /* background-color: rgba(255, 255,255, 0.5); */
   margin-bottom: 100px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .card{
@@ -323,17 +329,30 @@ footer{
 /* REGISTRO DE USUARIO*/
 .main_registro{
   font-family: 'Karla', sans-serif;
-  background-image: url("../img/724.jpg");
+  background-color: #bfbfbf;
   background-repeat: no-repeat;
   background-size:cover;
   padding-top:70px;
 
 }
-.registroDeUsuario input{
-  margin-left: 20px;
+.registroDeUsuario .inputEspacio{
   background: none;
   border-style:none;
   border-bottom:solid 1px;
+  margin-bottom:5%;
+  width: 50%;
+}
+.inputValidar{
+  background: none;
+  border-style:none;
+  border-bottom:solid 1px;
+  margin-bottom:5%;
+  width: 50%;
+  border:1px solid red ;
+  
+}
+.inputValidar:hover{
+  box-shadow: 0 0 15px red;
 }
 main .registroDeUsuario p label{
   margin-top: 35px;
@@ -371,9 +390,9 @@ main .registroDeUsuario p label{
  /*********************************/
  /****Inicio Estilo para login****/
  /********************************/
- .divFormLogin{
+ /* .divFormLogin{
    position:absolute;
- }
+ } */
  .content{
    text-align: center;
  }
@@ -409,24 +428,33 @@ main .registroDeUsuario p label{
  .formLogin .nombre, .password{
    border: solid 1px;
    display: inline;
-   padding: 2%;
-   border-radius: 4%;
-   margin:15%;
+   /* padding: 2%;
+   border-radius: 4%; */
+   /* margin:15%; */
+   display: block;
+   border:none;
+   color:white;
+   padding:2% 21%;
+   border-radius:6%;
+   color: rgba(255,255,255,.7);
  }
  .formLogin .inputPassLogin{
    margin-top: 5%;
    background-color: #ffffff00;
    border: none;
-   width: 40%;
+   width: 85%;
+   border-bottom: solid 1px;
  }
  .formLogin .inputNombreLogin{
    margin-top: 10%;
    background-color: #ffffff00;
    border:none;
-   width: 40%;
+   width: 85%;
+   border-bottom: solid 1px;
  }
 #bodyLogin{
-    background-image: url('../img/back123.jpeg');
+    /* background-image: url('../img/back123.jpeg'); */
+    background-color: #bfbfbf;
     background-size: 100%;
 }
 .forgotPsw{
@@ -495,7 +523,7 @@ main .registroDeUsuario p label{
   /*****************************************************/
  /****Inicio Responsive login y Preguntas Frecuentes****/
  /*****************************************************/
- @media (min-width: 100px) and (max-width: 460px)
+ /* @media (min-width: 100px) and (max-width: 460px)
  {
    .preguntasFrecuentes{
      margin-left: 9%;
@@ -559,13 +587,14 @@ main .registroDeUsuario p label{
   main .registroDeUsuario p label{
     display: block;
   }
-} 
-@media (min-width: 1024px) 
+} */
+@media (min-width: 1024px)
 {
-  .content .userImg {
+  .container .userImg {
     width:22%;
-    margin-bottom: -12%;
+    margin-bottom: -7%;
     margin-top: 3%;
+    padding-top: 10%;
     position: relative;
   }
   .formLogin{
@@ -573,17 +602,16 @@ main .registroDeUsuario p label{
     padding-top: 11%;
     position: initial;
   }
-  
+
 } 
 
 /********************************************************/
 /****Fin Responsive para login y preguntas frecuentes****/
 /********************************************************/
 
-------------------------------------------
-A PARTIR DE ACA SE ESTILEA PARA RESPONSIVE
-------------------------------------------
-*/
+
+/* A PARTIR DE ACA SE ESTILEA PARA RESPONSIVE */
+
 
 /* HOME START */
 @media (max-width:480px) and (orientation:landscape) {
