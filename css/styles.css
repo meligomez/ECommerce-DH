@@ -24,9 +24,9 @@ header{
   background-color: #04042C;
   height: 90px;
   width: 100%;
-  position:fixed;
+  position: fixed;
   opacity: 0.8;
-  z-index: 1;
+  z-index: 4;
 }
 
 header nav{
@@ -481,6 +481,7 @@ main .registroDeUsuario p label{
   font-family: 'Karla', sans-serif;
   color: #9393cf;
 }
+
 .formLogin .inputPassLogin:hover {outline:none;}
 .formLogin .inputPassLogin:active {outline:none;}
 .formLogin .inputPassLogin:focus {outline:none;}
@@ -595,11 +596,13 @@ main .registroDeUsuario p label{
 @media (min-width: 1024px)
 {
   .container .userImg {
+
     width:22%;
     margin-bottom: -7%;
     margin-top: 3%;
     padding-top: 10%;
     position: relative;
+      z-index: 2;
   }
   .formLogin{
     text-align:center;
