@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 ?>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -15,16 +15,24 @@
       <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
         <button class="dropdown-item" type="button">VEHICULOS</button>
         <button class="dropdown-item" type="button">ACCESORIOS</button>
-        <button class="dropdown-item" type="button">INGRESA</button>
+        <button class="dropdown-item" type="button" <?php echo isset($_SESSION["userLogueado"])?"style='display:none;'":"" ?> >INGRESA</button>
       </div>
     </div>
     <ul class="lista_menu">
+      <li><a href="login.php" <?php echo isset($_SESSION["userLogueado"])?"style='display:none;'":"" ?> >INGRESA</a></li>
+      <li><a href="registroDeUsuarios.php" <?php echo isset($_SESSION["userLogueado"])?"style='display:none;'":"" ?>>REGISTRATE</a></li>
       <li><a href="home.php">VEHICULOS</a></li>
-      <li><a href="login.php">INGRESA</a></li>
-      <li><a href="registroDeUsuarios.php">REGISTRATE</a></li>
       <li><a href="">NOSOTROS</a></li>
+      <div class="dropdown menuLogueado" <?php echo isset($_SESSION["userLogueado"])?"":"style='display:none;' "?>>
+        <li class="dropbtn">PERFIL
+          <div class="dropdown-content">
+            <a href="#">Configurar</a>
+        </div>
+        </li>
+      </div>
       <li><a href=""><img src="../img/carrito.png" alt="carro-de-compras"></a></li>
       <li><a href=""><img src="../img/settings.png" alt="configuracion"></a></li>
+      <li <?php echo isset($_SESSION["userLogueado"])?"":"style='display:none;'" ?>><a href="./login.php"><img src="../img/logout.png" alt="Logout"></a></li>
     </ul>
   </nav>
 </header>
