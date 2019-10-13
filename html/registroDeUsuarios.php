@@ -62,6 +62,7 @@ if(existeUsuario($_POST["usuario"]))
   $errorUsuarioYaExiste="El nombre de usuario ya está en uso, por favor ingrese otro";
 }else
 {
+  echo "entra";
   //nos guardarmos los datos del post en un array
   $usuario=[
     "id"=> md5($_POST["usuario"]),
@@ -72,14 +73,13 @@ if(existeUsuario($_POST["usuario"]))
     "contrasenia" =>  $contrasenia
   ];
   $usuarios[] = $usuario;
-}
-
-//convierto el nuevo array completo a json
+  //convierto el nuevo array completo a json
 $nuevosUsuariosEnJSON = json_encode($usuarios);
 
 //escribo el nuevo json en el archivo .json
 file_put_contents("..\json\usuarios.json",$nuevosUsuariosEnJSON);
 header('Location: /ECommerce-DH/html/login.php');
+}
 
 }
   
@@ -88,7 +88,6 @@ header('Location: /ECommerce-DH/html/login.php');
 
 
 function existeUsuario($userABuscar){
-  exit;
   foreach ($usuarios as $unUsuario) {
     if($unUsuario["usuario"]==$userABuscar)
     {
