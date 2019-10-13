@@ -667,10 +667,7 @@ main .registroDeUsuario p label{
 
 
 /* HOME START */
-@media (min-width:100px) and (max-width:480px) {
-  .html-home{
-    width: 480px !important;
-  }
+@media (min-width:50px) and (max-width:480px) {
 
   /* Header START */
   .home{
@@ -715,7 +712,7 @@ main .registroDeUsuario p label{
 
   /* Body START */
   .main_home{
-    width: 480px;
+    width: 350px;
   }
 
   .contenedor-titulo-autos{
@@ -724,9 +721,9 @@ main .registroDeUsuario p label{
     justify-content: space-around;
     align-items: center;
     margin-top: 30px;
-    margin-left: 62px;
+    margin-left: 140px;
     /* background-color: rgba(255, 255,255, 0.7); */
-    width: 400px;
+    width: 350px;
     border-radius: 10px 10px 0px 0px;
   }
 
@@ -735,8 +732,9 @@ main .registroDeUsuario p label{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 15px 15px 15px 62px;
-    width: 400px;
+    padding: 15px 15px 15px 15px;
+    margin-left: 140px;
+    width: 350px;
     /* background-color: rgba(255, 255,255, 0.5); */
     font-family: 'Montserrat', sans-serif;
   }
@@ -751,9 +749,9 @@ main .registroDeUsuario p label{
     justify-content: space-around;
     align-items: center;
     margin-top: 30px;
-    margin-left: 62px;
+    margin-left: 140px;
     /* background-color: rgba(255, 255,255, 0.7); */
-    width: 400px;
+    width: 350px;
     border-radius: 10px 10px 0px 0px;
   }
 
@@ -762,10 +760,11 @@ main .registroDeUsuario p label{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 400px;
+    width: 350px;
     /* background-color: rgba(255, 255,255, 0.5); */
     margin-bottom: 30px;
-    padding: 15px 15px 15px 62px;
+    margin-left: 140px;
+    padding: 15px 15px 15px 15px;
     font-family: 'Montserrat', sans-serif;
   }
 
@@ -775,8 +774,9 @@ main .registroDeUsuario p label{
     justify-content: center;
     align-items: center;
     /* background-color: rgba(255, 255,255, 0.7); */
-    width: 400px;
-    margin-left: 62px;
+    width: 350px;
+    margin-left: 32px;
+    margin-left: 140px;
     font-family: 'Montserrat', sans-serif;
     border-radius: 10px 10px 0px 0px;
   }
@@ -786,10 +786,11 @@ main .registroDeUsuario p label{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 400px;
+    width: 350px;
     /* background-color: rgba(255, 255,255, 0.5); */
     margin-bottom: 30px;
-    padding: 15px 15px 15px 62px;
+    margin-left: 140px;
+    padding: 15px 15px 15px 15px;
     font-family: 'Montserrat', sans-serif;
   }
   /* Body END */
@@ -797,7 +798,7 @@ main .registroDeUsuario p label{
   /* Footer START */
   footer{
     height: 100%;
-    width: 100%;
+    width: 480px;
     box-sizing: border-box;
   }
 
