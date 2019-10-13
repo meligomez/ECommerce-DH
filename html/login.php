@@ -21,11 +21,13 @@ if($_POST)
     }
     else
     {
-      if($_POST[""])
+      //Valido si seleccionó "Recordarme" y en caso de ok genero Cookie, sino creo Session
+      if($_POST["cbox1"])
       {
         $cookie_name="usuario";
         $cookie_value=idByUsername($_POST["user"],$_POST["password"]);
         setcookie($cookie_name,$cookie_value);
+        header('Location: /ECommerce-DH/html/home.php');
       }
       else{
         loguearse($_POST["user"],$_POST["password"]);
@@ -124,7 +126,7 @@ function idByUsername($unUser,$unaPsw)
         <span style="color:red;font-size:12px;"><?=$errorNoExisteUsuario;?></span>
         <span style="color:red;font-size:12px;"><?=$errorUserYPsw;?></span>
         <div class="col-12 rememberMe">
-            <label class="labelrememberMe"><input type="checkbox" id="cbox1" value="first_checkbox"> Recordarme</label>
+            <label class="labelrememberMe"><input type="checkbox" id="cbox1" name="cbox1" value="first_checkbox"> Recordarme</label>
         </div>
              <input class="login" type="submit" name="" value="LOGIN">
         <div class="forgotPsw">
