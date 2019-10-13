@@ -47,43 +47,40 @@ if($_POST)
 //fin de validaciones de datos
 
 //inicio persistencia en JSON.
-//primero valido si no hay ningun error
-if(!$errores)
-{
-//traigo los usuarios del json
-$usuariosEnJSON = file_get_contents("..\json\usuarios.json");
-//convierto el json en array
-$usuarios = json_decode($usuariosEnJSON);
-//agrego el nuevo usuario al array de la base de datos
-//validar que el usuario no exista
+  //primero valido si no hay ningun error
+  if(!$errores)
+  {
+  //traigo los usuarios del json
+  $usuariosEnJSON = file_get_contents("..\json\usuarios.json");
+  //convierto el json en array
+  $usuarios = json_decode($usuariosEnJSON);
+  //agrego el nuevo usuario al array de la base de datos
+  //validar que el usuario no exista
 
-if(existeUsuario($_POST["usuario"]))
-{
-  $errorUsuarioYaExiste="El nombre de usuario ya está en uso, por favor ingrese otro";
-}else
-{
-  echo "entra";
-  //nos guardarmos los datos del post en un array
-  $usuario=[
-    "id"=> md5($_POST["usuario"]),
-    "usuario" => $_POST["usuario"],
-    "nombreYapellido" => $_POST["nombreYapellido"],
-    "email" => $_POST["email"],
-    "fotoPerfil"=>$_POST["fotoPerfil"],
-    "contrasenia" =>  $contrasenia
-  ];
-  $usuarios[] = $usuario;
-  //convierto el nuevo array completo a json
-$nuevosUsuariosEnJSON = json_encode($usuarios);
+    if(existeUsuario($_POST["usuario"]))
+    {
+      $errorUsuarioYaExiste="El nombre de usuario ya está en uso, por favor ingrese otro";
+    }else
+    {
+      echo "entra";
+      //nos guardarmos los datos del post en un array
+      $usuario=[
+        "id"=> md5($_POST["usuario"]),
+        "usuario" => $_POST["usuario"],
+        "nombreYapellido" => $_POST["nombreYapellido"],
+        "email" => $_POST["email"],
+        "fotoPerfil"=>$_POST["fotoPerfil"],
+        "contrasenia" =>  $contrasenia
+      ];
+      $usuarios[] = $usuario;
+      //convierto el nuevo array completo a json
+    $nuevosUsuariosEnJSON = json_encode($usuarios);
 
-//escribo el nuevo json en el archivo .json
-file_put_contents("..\json\usuarios.json",$nuevosUsuariosEnJSON);
-header('Location: /ECommerce-DH/html/login.php');
-}
-
-}
-  
-  
+    //escribo el nuevo json en el archivo .json
+    file_put_contents("..\json\usuarios.json",$nuevosUsuariosEnJSON);
+    header('Location: /ECommerce-DH/html/login.php');
+    }
+  }
 }
 
 
@@ -121,18 +118,18 @@ function existeUsuario($userABuscar){
             <h2>REGISTRO</h2>
             <p>
                 <img src="../img/user.svg" alt="" width="6%">
-                <input  <?php echo $errorUsuario!=""?"class='inputValidar'":""; ?>  id="usuario" class="inputEspacio" type="text" name="usuario" placeholder="Ingrese un Usuario" value="">
+                <input  <?php echo $errorUsuario!=""?"class='inputValidar'":""; ?>  id="usuario" class="inputEspacio" type="text" name="usuario" <?php echo ($errorUsuario=="" && isset($_POST["usuario"]))?" value='".$_POST["usuario"]."' ":""; ?> placeholder="Ingrese un Usuario" >
                 <span style="color:red;font-size:12px;display:block;"><?=$errorUsuario;?></span>
                 <span style="color:red;font-size:12px;display:block;"><?=$errorUsuarioYaExiste;?></span>
               </p>
             <p>
               <img src="../img/card.svg" alt="" width="6%">
-              <input  <?php echo $errorNombreYApellido!=""?"class='inputValidar'":""; ?> id="nombreYapellido" class="inputEspacio" type="text" name="nombreYapellido" placeholder="Ingrese su nombre y apellido" value="">
+              <input  <?php echo $errorNombreYApellido!=""?"class='inputValidar'":""; ?> id="nombreYapellido" class="inputEspacio" type="text" name="nombreYapellido" placeholder="Ingrese su nombre y apellido" <?php echo ($errorNombreYApellido==""  && isset($_POST["nombreYapellido"]) )?" value='".$_POST["nombreYapellido"]."' ":""; ?>>
               <span style="color:red;font-size:12px;display:block;"><?=$errorNombreYApellido;?></span>
             </p>
             <p>
               <img src="../img/email.svg" alt="" width="6%">
-              <input <?php echo $errorEmail!=""?"class='inputValidar'":""; ?> id="email" class="inputEspacio" type="email" name="email" placeholder="Ingrese su mail" value="">
+              <input <?php echo $errorEmail!=""?"class='inputValidar'":""; ?> id="email" class="inputEspacio" type="email" name="email" placeholder="Ingrese su mail" <?php echo ($errorEmail==""  && isset($_POST["email"]))?" value='".$_POST["email"]."' ":""; ?>>
               <span style="color:red;font-size:12px;display:block;"><?=$errorEmail;?></span>
             </p>
             <p>
@@ -140,7 +137,7 @@ function existeUsuario($userABuscar){
            <p>
             <p>
               <img src="../img/lock.svg" alt="" width="6%">
-              <input <?php echo $errorContrasenia!=""?"class='inputValidar''":""; ?> id="contrasenia" class="inputEspacio"  type="password" name="contrasenia" placeholder="Ingrese una contraseña" value="">
+              <input <?php echo $errorContrasenia!=""?"class='inputValidar''":""; ?> id="contrasenia" class="inputEspacio"  type="password" name="contrasenia" placeholder="Ingrese una contraseña">
               <span style="color:red;font-size:12px;display:block;"><?=$errorContrasenia;?></span>
             </p>
             <p>
