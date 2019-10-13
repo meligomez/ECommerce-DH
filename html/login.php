@@ -21,7 +21,16 @@ if($_POST)
     }
     else
     {
-      loguearse($_POST["user"],$_POST["password"]);
+      if($_POST[""])
+      {
+        $cookie_name="usuario";
+        $cookie_value=idByUsername($_POST["user"],$_POST["password"]);
+        setcookie($cookie_name,$cookie_value);
+      }
+      else{
+        loguearse($_POST["user"],$_POST["password"]);
+
+      }
     }
 }
   //Validación campo psw vacio

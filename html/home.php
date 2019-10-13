@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 //Deberia ir en una clase usuario
 function getUserById($id)
 {
@@ -14,7 +14,13 @@ function getUserById($id)
   }
 }
 //Fin Clase usuario
-$usuarioLogueado=getUserById($_SESSION["userLogueado"]);
+//Valido que alguien esté en la sesión
+if(isset($_SESSION))
+{
+  session_start();
+  $usuarioLogueado=getUserById($_SESSION["userLogueado"]);
+}
+
 //Ya anda, deberíamos ver como mostrar los diferentes menúes según si está logueado o no.
 ?>
 

@@ -79,7 +79,7 @@ $nuevosUsuariosEnJSON = json_encode($usuarios);
 
 //escribo el nuevo json en el archivo .json
 file_put_contents("..\json\usuarios.json",$nuevosUsuariosEnJSON);
-header('Location: ./login.php');
+header('Location: /ECommerce-DH/html/login.php');
 
 }
   
