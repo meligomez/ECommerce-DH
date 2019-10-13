@@ -6,7 +6,7 @@ ESTILOS UNICOS PARA home.php
 .home{
   display: flex;
   flex-direction: column;
-  background-color: #bfbfbf;
+ background-image: url("../img/backHome.jpg");
   background-repeat: no-repeat;
   background-size:cover;
   background-attachment: fixed;
@@ -333,7 +333,7 @@ footer{
 /* REGISTRO DE USUARIO*/
 .main_registro{
   font-family: 'Karla', sans-serif;
-  background-color: #bfbfbf;
+   background-image: url("../img/backHome.jpg");
   background-repeat: no-repeat;
   background-size:cover;
   padding-top:70px;
@@ -406,7 +406,7 @@ main .registroDeUsuario p label{
    font-family: 'Karla', sans-serif;
    /* opacity: 0.5; */
    /* margin-top:30%; */
-  background-color: rgba(255,255,255,.7);
+ background-image: url("../img/backHome.jpg");
    border-radius: 3%;
    position: initial;
  }
@@ -502,7 +502,7 @@ main .registroDeUsuario p label{
   display: flex;
   padding-left: 3%;
   flex-direction: row;
-  background-color:rgba(255, 255,255, 0.5);
+ background-image: url("../img/backHome.jpg");
   color: black;
   margin-top: 10%;
   margin-bottom: 5%;
@@ -602,7 +602,7 @@ main .registroDeUsuario p label{
     margin-top: 3%;
     padding-top: 10%;
     position: relative;
-      z-index: 2;
+    z-index: 2;
   }
   .formLogin{
     text-align:center;
