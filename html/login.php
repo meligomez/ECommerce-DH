@@ -100,7 +100,7 @@ function loguearse($unUser,$unaPsw)
         </div>
         </form>
           <div class="col-12 footerLogin">
-                 ¿No tenés cuenta? <a href="registroDeUsuarios.php">Registrarme</a>
+                 ¿No tenés cuenta? <a href="registroDeUsuarios.php">  Registrarme</a>
           </div>
       <!-- </div> -->
     </div>

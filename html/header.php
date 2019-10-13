@@ -16,8 +16,7 @@
       </div>
     </div>
     <ul class="lista_menu">
-      <li><a href="#">VEHICULOS</a></li>
-      <li><a href="#">ACCESORIOS</a></li>
+      <li><a href="home.php">VEHICULOS</a></li>
       <li><a href="login.php">INGRESA</a></li>
       <li><a href="registroDeUsuarios.php">REGISTRATE</a></li>
       <li><a href="">NOSOTROS</a></li>
