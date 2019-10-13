@@ -9,56 +9,79 @@ if($_POST)
 {
   // creo una variable para ver si hay errores
   $errores = false;
-  if($_POST["user"] == ""){
+  if($_POST["user"] == "")
+  {
     $errorUsuario = "Debe ingresar un nombre de usuario";
     $errores = true;
-}else if($_POST["user"] != "" && $_POST["password"] != ""){
-  if(!validarUserYPsw($_POST["user"],$_POST["password"]))
+  }else if($_POST["user"] != "" && $_POST["password"] != "")
   {
-    $errores=true;
-  }
-  else{
-    echo "Entro aca";
-    loguearse($_POST["user"],$_POST["password"]);
-  }
+    if(!validarUserYPsw($_POST["user"],$_POST["password"]))
+    {
+      $errores=true;
+    }
+    else
+    {
+      loguearse($_POST["user"],$_POST["password"]);
+    }
 }
-
-
-  if($_POST["password"] == ""){
+  //Validación campo psw vacio
+  if($_POST["password"] == "")
+  {
       $errorContrasenia = "Debe ingresar su contraseña";
       $errores = true;
   }
 
 }
-//Creo una función para validar el usuario y la contraseña
-function validarUserYPsw($unUser,$unaPsw){
+//Usuario---> Esto iria en una clase
+//Creo un metodo para validar el usuario y la contraseña
+function validarUserYPsw($unUser,$unaPsw)
+{
   global $errorUserYPsw;
   global $errorNoExisteUsuario;
   $userCo;
   //Recorro el json de usuarios y encontrar ese usuario y validar la psw 
   $urlJsonUsuarios=file_get_contents("../json/usuarios.json");
   $usuarios =json_decode($urlJsonUsuarios,true);
-  foreach ($usuarios as $unUsuario ) {
-    if($unUsuario["usuario"]==$unUser){
-      if(password_verify($unaPsw,$unUsuario["contrasenia"])){
-        return true;
+    foreach ($usuarios as $unUsuario ) 
+    {
+      if($unUsuario["usuario"]==$unUser)
+      {
+        if(password_verify($unaPsw,$unUsuario["contrasenia"]))
+        {
+          return true;
+        }
+        $errorUserYPsw="No coincide el usuario y la contraseña, valide los datos ingresados";
+        return false;
       }
-      $errorUserYPsw="No coincide el usuario y la contraseña, valide los datos ingresados";
-      return false;
+      $errores=true;
     }
-    $errores=true;
-  }
   $errorNoExisteUsuario="No existe el usuario indicado, valide los datos ingresados";
   return false;
 }
+
+//Metodo que sirve para crear la sesión y redirigirlo al home
 function loguearse($unUser,$unaPsw)  
-  {
-//crear la sesión / cookie y redirigirlo al home, 
+{
+   //crear la sesión 
    session_start();
+   $_SESSION["userLogueado"]=idByUsername($unUser,$unaPsw);
     header('Location: /ECommerce-DH/html/home.php');
+}
 
+//Metodo para obtener el ID de un usuario determinado, dado su nombre de usuario y psw
+function idByUsername($unUser,$unaPsw)
+{
+  $urlJsonUsuarios=file_get_contents("../json/usuarios.json");
+  $usuarios =json_decode($urlJsonUsuarios,true);
+    foreach ($usuarios as $unUsuario) 
+    { 
+        if($unUsuario["usuario"]==$unUser && password_verify($unaPsw,$unUsuario["contrasenia"]))
+        {
+        return $unUsuario["id"];
+        }
   }
-
+}
+//Fin clase Usuario
  ?>
 <html lang="es" dir="ltr">
   <head>

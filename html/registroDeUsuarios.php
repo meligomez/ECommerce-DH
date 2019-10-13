@@ -51,27 +51,27 @@ if($_POST)
 if(!$errores)
 {
 //traigo los usuarios del json
-
 $usuariosEnJSON = file_get_contents("..\json\usuarios.json");
-
 //convierto el json en array
 $usuarios = json_decode($usuariosEnJSON);
 //agrego el nuevo usuario al array de la base de datos
 //validar que el usuario no exista
 
-if(existeUsuario($_POST["usuario"])){
-$errorUsuarioYaExiste="El nombre de usuario ya está en uso, por favor ingrese otro";
-}else{
+if(existeUsuario($_POST["usuario"]))
+{
+  $errorUsuarioYaExiste="El nombre de usuario ya está en uso, por favor ingrese otro";
+}else
+{
   //nos guardarmos los datos del post en un array
-$usuario=[
-  "id"=> md5($_POST["usuario"]),
-  "usuario" => $_POST["usuario"],
-  "nombreYapellido" => $_POST["nombreYapellido"],
-  "email" => $_POST["email"],
-  "fotoPerfil"=>$_POST["fotoPerfil"],
-  "contrasenia" =>  $contrasenia
-];
-$usuarios[] = $usuario;
+  $usuario=[
+    "id"=> md5($_POST["usuario"]),
+    "usuario" => $_POST["usuario"],
+    "nombreYapellido" => $_POST["nombreYapellido"],
+    "email" => $_POST["email"],
+    "fotoPerfil"=>$_POST["fotoPerfil"],
+    "contrasenia" =>  $contrasenia
+  ];
+  $usuarios[] = $usuario;
 }
 
 //convierto el nuevo array completo a json
@@ -88,7 +88,6 @@ header('Location: ./login.php');
 
 
 function existeUsuario($userABuscar){
-  var_dump($usuarios);
   exit;
   foreach ($usuarios as $unUsuario) {
     if($unUsuario["usuario"]==$userABuscar)

@@ -1,3 +1,24 @@
+<?php
+session_start();
+//Deberia ir en una clase usuario
+function getUserById($id)
+{
+  $urlJsonUsuarios=file_get_contents("../json/usuarios.json");
+  $usuarios =json_decode($urlJsonUsuarios,true);
+  foreach ($usuarios as $unUsuario) 
+  { 
+    if($unUsuario["id"]==$id)
+    {
+      return $unUsuario;
+    }
+  }
+}
+//Fin Clase usuario
+$usuarioLogueado=getUserById($_SESSION["userLogueado"]);
+//Ya anda, deberíamos ver como mostrar los diferentes menúes según si está logueado o no.
+?>
+
+
 <html>
 <head>
   <meta charset="UTF-8">
