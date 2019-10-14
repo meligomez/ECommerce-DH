@@ -78,7 +78,7 @@ if($_POST)
 
     //escribo el nuevo json en el archivo .json
     file_put_contents("..\json\usuarios.json",$nuevosUsuariosEnJSON);
-    header('Location: /ECommerce-DH/html/login.php');
+    header('Location: /ECommerce-DH/html/home.php');
     }
   }
 }

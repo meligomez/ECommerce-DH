@@ -35,12 +35,12 @@ if(isset($_POST["inputDeslogueo"]))
       </div>
     </div>
     <ul class="lista_menu">
-      <li><a href="login.php" <?php echo isset($_SESSION["userLogueado"])?"style='display:none;'":"" ?> >INGRESA</a></li>
-      <li><a href="registroDeUsuarios.php" <?php echo isset($_SESSION["userLogueado"])?"style='display:none;'":"" ?>>REGISTRATE</a></li>
+      <li><a href="login.php" <?php echo (isset($_SESSION["userLogueado"])  || isset($_COOKIE["usuario"]))?"style='display:none;'":"" ?> >INGRESA</a></li>
+      <li><a href="registroDeUsuarios.php" <?php echo (isset($_SESSION["userLogueado"])  || isset($_COOKIE["usuario"]))?"style='display:none;'":"" ?>>REGISTRATE</a></li>
       <li><a href="home.php">VEHICULOS</a></li>
       <li><a href="">NOSOTROS</a></li>
-      <div class="dropdown menuLogueado" <?php echo isset($_SESSION["userLogueado"])?"":"style='display:none;' "?>>
-        <li class="dropbtn"  <?php echo isset($_SESSION["userLogueado"])?"":"style='display:none;'" ?> >PERFIL
+      <div class="dropdown menuLogueado" <?php echo (isset($_SESSION["userLogueado"])  || isset($_COOKIE["usuario"]))?"":"style='display:none;' "?>>
+        <li class="dropbtn"  <?php echo (isset($_SESSION["userLogueado"])  || isset($_COOKIE["usuario"]))?"":"style='display:none;'" ?> >PERFIL
           <div class="dropdown-content">
             <a href="#">Configurar</a>
         </div>
@@ -48,7 +48,7 @@ if(isset($_POST["inputDeslogueo"]))
       </div>
       <li><a href=""><img src="../img/carrito.png" alt="carro-de-compras"></a></li>
       <li><a href=""><img src="../img/settings.png" alt="configuracion"></a></li>
-      <li id="logout" <?php echo isset($_SESSION["userLogueado"])?"":"style='display:none;'" ?>>
+      <li id="logout" <?php echo (isset($_SESSION["userLogueado"]) || isset($_COOKIE["usuario"]) )?"":"style='display:none;'" ?>>
         <form action="" method="post">
           <input type="submit" value="" name="inputDeslogueo" style="background: none;border: none;background-image: url(../img/logout.png);
                                                                        background-size: cover;margin: 0px;background-position: center;width: 30px;margin-top: 54%;">
