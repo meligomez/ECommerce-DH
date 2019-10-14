@@ -504,6 +504,9 @@ main .registroDeUsuario p label{
 .forgotPsw a , .footerLogin a{
   color: #9393cf;
 }
+.row .footerLogin{
+  padding-left: 40%;
+}
 .rememberMe{
   padding-top: 3%;
   position: absolute;
@@ -871,4 +874,13 @@ main .registroDeUsuario p label{
     text-align: center;
   }
   /* Footer END */
+ .row .userImg{
+    width: 50%;
+    margin-left: 24%;
+    margin-bottom:-20%;
+    z-index: 1;
+  }
+.row .labelrememberMe{
+  margin-left: 43%;
+}
 }
