@@ -48,9 +48,12 @@ if(isset($_POST["inputDeslogueo"]))
       </div>
       <li><a href=""><img src="../img/carrito.png" alt="carro-de-compras"></a></li>
       <li><a href=""><img src="../img/settings.png" alt="configuracion"></a></li>
-      <form action="" method="post">
-      <li <?php echo isset($_SESSION["userLogueado"])?"":"style='display:none;'" ?>><input type="submit" value="" name="inputDeslogueo" class="logout"> </li>
-      </form>
+      <li id="logout" <?php echo isset($_SESSION["userLogueado"])?"":"style='display:none;'" ?>>
+        <form action="" method="post">
+          <input type="submit" value="" name="inputDeslogueo" style="background: none;border: none;background-image: url(../img/logout.png);
+                                                                       background-size: cover;margin: 0px;background-position: center;width: 30px;margin-top: 54%;">
+        </form>
+      </li>
     </ul>
   </nav>
 </header>

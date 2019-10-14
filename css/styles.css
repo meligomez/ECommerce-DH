@@ -708,6 +708,15 @@ main .registroDeUsuario p label{
     background-color: grey;
     border-radius: 30px;
   }
+.lista_menu #logout form input{
+    background: none;
+    border: none;
+    background-image: url(../img/logout.png);
+    background-size: cover;
+    margin: 0px;
+    background-position: center;
+    width: 25px;
+  } 
   /* Header END */
 
   /* Body START */
