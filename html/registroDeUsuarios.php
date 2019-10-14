@@ -109,7 +109,11 @@ function existeUsuario($userABuscar){
 </head>
 <body class="home">
 <?php include_once("header.php") ?>
-
+<?php 
+      if( isset($_SESSION["userLogueado"]) || isset($_COOKIE["usuario"])){ 
+            header('Location: /ECommerce-DH/html/home.php');
+        }
+?>
   <main class="main_registro">
 
      <div class="content">

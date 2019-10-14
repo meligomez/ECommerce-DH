@@ -92,6 +92,7 @@ function idByUsername($unUser,$unaPsw)
         }
   }
 }
+
 //Fin clase Usuario
  ?>
 <html lang="es" dir="ltr">
@@ -106,6 +107,11 @@ function idByUsername($unUser,$unaPsw)
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <?php include_once("header.php") ?>
+  <?php 
+      if( isset($_SESSION["userLogueado"]) || isset($_COOKIE["usuario"])){ 
+            header('Location: /ECommerce-DH/html/home.php');
+        }
+  ?>
   <body id="bodyLogin">
   <div class="container">
     <div class="row">
