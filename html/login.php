@@ -22,7 +22,7 @@ if($_POST)
     else
     {
       //Valido si seleccionó "Recordarme" y en caso de ok genero Cookie, sino creo Session
-      if($_POST["cbox1"])
+      if(isset($_POST["cbox1"]) && $_POST["cbox1"])
       {
         $cookie_name="usuario";
         $cookie_value=idByUsername($_POST["user"],$_POST["password"]);

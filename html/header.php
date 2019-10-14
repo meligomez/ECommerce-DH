@@ -1,6 +1,17 @@
 <?php
 session_start();
 
+function eliminarSesionOCookie(){
+  session_destroy();
+  setcookie("usuario",null,time()-1);
+  header("Location: login.php ");
+}
+if(isset($_POST["inputDeslogueo"]))
+{
+  eliminarSesionOCookie();
+  header('Location: /ECommerce-DH/html/login.php');
+}
+
 ?>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <header>
@@ -24,7 +35,7 @@ session_start();
       <li><a href="home.php">VEHICULOS</a></li>
       <li><a href="">NOSOTROS</a></li>
       <div class="dropdown menuLogueado" <?php echo isset($_SESSION["userLogueado"])?"":"style='display:none;' "?>>
-        <li class="dropbtn">PERFIL
+        <li class="dropbtn"  <?php echo isset($_SESSION["userLogueado"])?"":"style='display:none;'" ?> >PERFIL
           <div class="dropdown-content">
             <a href="#">Configurar</a>
         </div>
@@ -32,7 +43,9 @@ session_start();
       </div>
       <li><a href=""><img src="../img/carrito.png" alt="carro-de-compras"></a></li>
       <li><a href=""><img src="../img/settings.png" alt="configuracion"></a></li>
-      <li <?php echo isset($_SESSION["userLogueado"])?"":"style='display:none;'" ?>><a href="./login.php"><img src="../img/logout.png" alt="Logout"></a></li>
+      <form action="" method="post">
+      <li <?php echo isset($_SESSION["userLogueado"])?"":"style='display:none;'" ?>><input type="submit" value="" name="inputDeslogueo" class="logout"> </li>
+      </form>
     </ul>
   </nav>
 </header>
