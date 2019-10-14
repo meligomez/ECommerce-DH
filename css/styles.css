@@ -694,6 +694,16 @@ main .registroDeUsuario p label{
     padding: 0px;
   }
 
+  #options a{
+    font-weight: bolder;
+    text-decoration: ;
+    color: white;
+  }
+
+  .dropdown-menu.show{
+    background: black;
+  }
+
   .lista_titulo{
     padding: 0;
     margin: 0;
@@ -716,7 +726,7 @@ main .registroDeUsuario p label{
     margin: 0px;
     background-position: center;
     width: 25px;
-  } 
+  }
   /* Header END */
 
   /* Body START */

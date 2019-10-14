@@ -26,12 +26,15 @@ if(isset($_POST["inputDeslogueo"]))
     </ul>
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Menu ≡
+        Menu
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <button class="dropdown-item" type="button">VEHICULOS</button>
-        <button class="dropdown-item" type="button">ACCESORIOS</button>
-        <button class="dropdown-item" type="button" <?php echo isset($_SESSION["userLogueado"])?"style='display:none;'":"" ?> >INGRESA</button>
+        <button id="options" class="dropdown-item" type="button" <?php echo isset($_SESSION["userLogueado"])?"style='display:none;'":"" ?> ><a href="login.php">INGRESA</button>
+        <button id="options" class="dropdown-item" type="button" <?php echo isset($_SESSION["userLogueado"])?"style='display:none;'":"" ?> ><a href="registroDeUsuarios">REGISTRATE</button>
+        <button id="options" class="dropdown-item" type="button"><a href="home.php">VEHICULOS</a></button>
+        <button id="options" class="dropdown-item" type="button"><a href="#">NOSOTROS</a></button>
+        <button id="options" class="dropdown-item" type="button"><a href="#">COMPRA ACA</a></button>
+        <button id="options" class="dropdown-item" type="button"><a href="#">AJUSTES</a></button>
       </div>
     </div>
     <ul class="lista_menu">
