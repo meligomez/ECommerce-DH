@@ -12,20 +12,19 @@
 <body class="home">
 <?php include_once("header.php") ?>
 
-  <main class="main_home">
+  <main class="main_FAQs">
     <div class="contentPregFrecuentes">
         <div class="col-12 row">
             <div class="offset-lg-4 col-lg-4 offset-md-1 col-md-10 offset-sm-1 col-sm-10 preguntasFrecuentes">
                 <ul>
                     <li> <h2>Preguntas Frecuentes</h2> </li>
-                    <li> <a href="">¿Cómo dar de Alta un medio de pago?</a> </li>
-                    <li> <a href="">¿Cómo extender la protección del producto/vehículo?</a> </li>
-                    <li> <a href="">Tuve un problema con una compra</a> </li>
-                    <li> <a href="">Cómo protegemos a los compradores</a> </li>
-                    <li> <a href="">Realicé la compra y no recibí respuesta aún</a> </li>
-                    <li> <a href="">¿Cómo dar de baja un medio de pago?</a> </li>
-                    <li> <a href=""> Resolver problema con un pago</a></li>
-                    <li> <a href="">Pagar con Bitcoins</a> </li>
+                    <li> <a href="dar-alta-de-pagos.php">¿Cómo dar de Alta un medio de pago?</a> </li>
+                    <li> <a href="extender-proteccion-de-auto.php">¿Cómo extender la protección del producto/vehículo?</a> </li>
+                    <li> <a href="problemas-en-compra.php">Tuve un problema con una compra</a> </li>
+                    <li> <a href="proteccion-al-comprador.php">¿Cómo protegemos a los compradores?</a></li>
+                    <li> <a href="compra-sin-respuesta.php">Realicé la compra y no recibí respuesta aún</a> </li>
+                    <li> <a href="dar-baja-de-pagos.php">¿Cómo dar de baja un medio de pago?</a> </li>
+                    <li> <a href="https://ac.b2binpay.com/site/login">Pagar con Bitcoins</a> </li>
                 </ul>
             </div>
         </div>
