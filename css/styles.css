@@ -840,7 +840,7 @@ main .registroDeUsuario p label{
 
   /* Footer START */
   footer{
-    height: 100%;
+    height: 560px;
     width: 480px;
     box-sizing: border-box;
   }
@@ -904,4 +904,20 @@ main .registroDeUsuario p label{
 .row .labelrememberMe{
   margin-left: 43%;
 }
+
+  /* preguntasFrecuentes */
+  .main_respuestas{
+    width: 480px;
+    padding-bottom: 70px;
+  }
+
+  .copyright{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-top: 0.5px solid white;
+    padding-top: 20px;
+    width: 100%;
+    background:black;
+  }
 }
