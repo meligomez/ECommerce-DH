@@ -113,13 +113,14 @@ function idByUsername($unUser,$unaPsw)
         }
   ?>
   <body id="bodyLogin">
-  <div class="container">
-    <div class="row">
-    <!-- <div class="divFormLogin"> -->
-      <img class="offset-lg-5 col-lg-2 userImg" src="../img/Lagard3.png" alt="">
-        <form class="offset-lg-4 col-lg-4 offset-sm-3 col-sm-6 offset-xs-3 col-xs-6 formLogin container" action="" method="post">
+    <div class="container">    
+    <div class="login-content-logo">
+      <img class="userImg" src="../img/Lagard3.png" alt="">    
+    </div>
+        <div class="login-content-form">
+        <form class="formLogin" action="" method="post">
         <h1>Sign In</h1>
-        <div class="col-lg-12 nombre">
+        <div class="nombre">
            <img src="../img/user.svg" alt="" width="6%">
           <input  <?php echo $errorUsuario!=""?"class='inputValidar'":""; ?> class="inputNombreLogin" type="text" name="user" <?php echo $errorUserYPsw!=""?" value='".$_POST["user"]."' ":""; ?> placeholder="Username">
           <span style="color:red;font-size:12px;display:block;"><?=$errorUsuario;?></span>
@@ -139,16 +140,13 @@ function idByUsername($unUser,$unaPsw)
           <a href="#" class="col-8">¿Te olvidaste la contraseña?</a>
         </div>
         </form>
+        
+        
+        </div>
           <div class="col-12 footerLogin">
                  ¿No tenés cuenta? <a href="registroDeUsuarios.php">  Registrarme</a>
           </div>
-      <!-- </div> -->
     </div>
-    <div class="register">
-
-    </div>
-  </div>
-
+      <?php include_once("footer.php") ?>
   </body>
-  <?php include_once("footer.php") ?>
 </html>
