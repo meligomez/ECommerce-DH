@@ -432,6 +432,7 @@ main .registroDeUsuario p label{
    flex-direction:column;
    justify-content:center;
    align-items:center;
+   text-align: center;
  }
  .botonRegistrar{
    margin-bottom: 20px;
