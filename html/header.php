@@ -1,16 +1,18 @@
 <?php
-
-include_once("users.php");
-
-$user = new User();
-
 session_start();
 
-$user->eliminarSesionOCookie();
-$user->desloguearse();
+function eliminarSesionOCookie(){
+  session_destroy();
+  setcookie("usuario",null,time()-1);
+  header("Location: login.php ");
+}
+if(isset($_POST["inputDeslogueo"]))
+{
+  eliminarSesionOCookie();
+  header('Location: /ECommerce-DH/html/login.php');
+}
 
 ?>
-
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -27,34 +29,34 @@ $user->desloguearse();
         Menu
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <button id="options" class="dropdown-item" type="button" <?php $user->get_Contenido_Header_Segun_Estado_De_Logueo_Mobile() ?> ><a href="login.php">INGRESA</button>
-          <button id="options" class="dropdown-item" type="button" <?php $user->get_Contenido_Header_Segun_Estado_De_Logueo_Mobile() ?> ><a href="registroDeUsuarios">REGISTRATE</button>
-            <button id="options" class="dropdown-item" type="button"><a href="home.php">VEHICULOS</a></button>
-            <button id="options" class="dropdown-item" type="button"><a href="#">NOSOTROS</a></button>
-            <button id="options" class="dropdown-item" type="button"><a href="#">COMPRA ACA</a></button>
-            <button id="options" class="dropdown-item" type="button"><a href="#">AJUSTES</a></button>
-          </div>
+        <button id="options" class="dropdown-item" type="button" <?php echo isset($_SESSION["userLogueado"])?"style='display:none;'":"" ?> ><a href="login.php">INGRESA</button>
+        <button id="options" class="dropdown-item" type="button" <?php echo isset($_SESSION["userLogueado"])?"style='display:none;'":"" ?> ><a href="registroDeUsuarios">REGISTRATE</button>
+        <button id="options" class="dropdown-item" type="button"><a href="home.php">VEHICULOS</a></button>
+        <button id="options" class="dropdown-item" type="button"><a href="#">NOSOTROS</a></button>
+        <button id="options" class="dropdown-item" type="button"><a href="#">COMPRA ACA</a></button>
+        <button id="options" class="dropdown-item" type="button"><a href="#">AJUSTES</a></button>
+      </div>
+    </div>
+    <ul class="lista_menu">
+      <li><a href="login.php" <?php echo (isset($_SESSION["userLogueado"])  || isset($_COOKIE["usuario"]))?"style='display:none;'":"" ?> >INGRESA</a></li>
+      <li><a href="registroDeUsuarios.php" <?php echo (isset($_SESSION["userLogueado"])  || isset($_COOKIE["usuario"]))?"style='display:none;'":"" ?>>REGISTRATE</a></li>
+      <li><a href="home.php">VEHICULOS</a></li>
+      <li><a href="">NOSOTROS</a></li>
+      <div class="dropdown menuLogueado" <?php echo (isset($_SESSION["userLogueado"])  || isset($_COOKIE["usuario"]))?"":"style='display:none;' "?>>
+        <li class="dropbtn"  <?php echo (isset($_SESSION["userLogueado"])  || isset($_COOKIE["usuario"]))?"":"style='display:none;'" ?> >PERFIL
+          <div class="dropdown-content">
+            <a href="#">Configurar</a>
         </div>
-        <ul class="lista_menu">
-          <li><a href="login.php" <?php $user->getContenidoSegunEstadoDeLogueo() ?> >INGRESA</a></li>
-          <li><a href="registroDeUsuarios.php" <?php $user->getContenidoSegunEstadoDeLogueo() ?>>REGISTRATE</a></li>
-          <li><a href="home.php">VEHICULOS</a></li>
-          <li><a href="">NOSOTROS</a></li>
-          <div class="dropdown menuLogueado" <?php $user->getContenidoSegunEstadoDeLogueo()?>>
-            <li class="dropbtn"  <?php $user->getContenidoSegunEstadoDeLogueo() ?> >PERFIL
-              <div class="dropdown-content">
-                <a href="#">Configurar</a>
-              </div>
-            </li>
-          </div>
-          <li><a href=""><img src="../img/carrito.png" alt="carro-de-compras"></a></li>
-          <li><a href=""><img src="../img/settings.png" alt="configuracion"></a></li>
-          <li id="logout" <?php $user->getContenidoSegunEstadoDeLogueo() ?>>
-            <form action="" method="post">
-              <input type="submit" value="" name="inputDeslogueo" style="background: none;border: none;background-image: url(../img/logout.png);
-              background-size: cover;margin: 0px;background-position: center;width: 30px;margin-top: 54%;">
-            </form>
-          </li>
-        </ul>
-      </nav>
-    </header>
+        </li>
+      </div>
+      <li><a href=""><img src="../img/carrito.png" alt="carro-de-compras"></a></li>
+      <li><a href=""><img src="../img/settings.png" alt="configuracion"></a></li>
+      <li id="logout" <?php echo (isset($_SESSION["userLogueado"]) || isset($_COOKIE["usuario"]) )?"":"style='display:none;'" ?>>
+        <form action="" method="post">
+          <input type="submit" value="" name="inputDeslogueo" style="background: none;border: none;background-image: url(../img/logout.png);
+                                                                       background-size: cover;margin: 0px;background-position: center;width: 30px;margin-top: 54%;">
+        </form>
+      </li>
+    </ul>
+  </nav>
+</header>
