@@ -120,123 +120,6 @@ header nav{
 
 /*
 --------------------------------------------------------------
-MAIN
---------------------------------------------------------------
-*/
-.main_home{
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px;
-  margin: 0px;
-  width: 100%;
-}
-
-.contenedor-titulo-autos{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 200px;
-  /* background-color: rgba(255, 255,255, 0.7); */
-  width: 950px;
-  border-radius: 10px 10px 0px 0px;
-}
-
-.titulo-autos{
-  color: #2E2E2E;
-  margin: 0;
-  padding: 0;
-  font-size: 30px;
-  font-weight: bolder;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.bloque_autos{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 950px;
-  /* background-color: rgba(255, 255,255, 0.5); */
-  font-family: 'Montserrat', sans-serif;
-}
-
-.contenedor-titulo-pickups{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
-  /* background-color: rgba(255, 255,255, 0.7); */
-  width: 950px;
-  border-radius: 10px 10px 0px 0px;
-}
-
-.titulo-pickups{
-  color: #2E2E2E;
-  margin: 0;
-  padding: 0;
-  font-size: 30px;
-  font-weight: bolder;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.bloque_pickups{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 950px;
-  /* background-color: rgba(255, 255,255, 0.5); */
-  margin-bottom: 100px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.contenedor-titulo-van{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  /* background-color: rgba(255, 255,255, 0.7); */
-  width: 950px;
-  font-family: 'Montserrat', sans-serif;
-  border-radius: 10px 10px 0px 0px;
-}
-
-.titulo-van{
-  color: #2E2E2E;
-  margin: 0;
-  padding: 0;
-  font-size: 30px;
-  font-weight: bolder;
-}
-
-.bloque_van{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 950px;
-  /* background-color: rgba(255, 255,255, 0.5); */
-  margin-bottom: 100px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.card{
-  border: 10px grey solid;
-
-}
-.card-body{
-  background-color: grey;
-}
-
-.btn-primary{
-  background-color:green;
-  border: 1px green solid;
-}
-
-/*
---------------------------------------------------------------
 FOOTER
 --------------------------------------------------------------
 */
@@ -365,6 +248,144 @@ footer{
 }
 .copyright p:hover{text-decoration: none;color: white;font-family: 'Dosis', sans-serif;}
 
+/*
+--------------------------------------------------------------
+MAIN
+--------------------------------------------------------------
+*/
+.main_home{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+
+.contenedor-titulo-autos{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  /* background-color: rgba(255, 255,255, 0.7); */
+  width: 950px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.titulo-autos{
+  color: #2E2E2E;
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bloque_autos{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 950px;
+  /* background-color: rgba(255, 255,255, 0.5); */
+  font-family: 'Montserrat', sans-serif;
+}
+
+.contenedor-titulo-pickups{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  /* background-color: rgba(255, 255,255, 0.7); */
+  width: 950px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.titulo-pickups{
+  color: #2E2E2E;
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bloque_pickups{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 950px;
+  /* background-color: rgba(255, 255,255, 0.5); */
+  margin-bottom: 100px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.contenedor-titulo-van{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgba(255, 255,255, 0.7); */
+  width: 950px;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.titulo-van{
+  color: #2E2E2E;
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.bloque_van{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 950px;
+  /* background-color: rgba(255, 255,255, 0.5); */
+  margin-bottom: 100px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.card{
+  border: 10px grey solid;
+
+}
+.card-body{
+  background-color: grey;
+}
+
+.btn-primary{
+  background-color:green;
+  border: 1px green solid;
+}
+
+/*
+--------------------------------------------------------------
+FAQs
+--------------------------------------------------------------
+*/
+.main_respuestas{
+  background-image: url("../img/backHome.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  width: 100%;
+}
+
+.FAQs{
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.titulo-FAQs{
+  margin-top: 50px;
+  font-weight: bolder;
+}
 
 /* REGISTRO DE USUARIO*/
 .main_registro{
@@ -800,7 +821,7 @@ main .registroDeUsuario p label{
 
   /* Footer START */
   footer{
-    height: 100%;
+    height: 560px;
     width: 480px;
     box-sizing: border-box;
   }
@@ -864,4 +885,20 @@ main .registroDeUsuario p label{
 .row .labelrememberMe{
   margin-left: 43%;
 }
+
+  /* preguntasFrecuentes */
+  .main_respuestas{
+    width: 480px;
+    padding-bottom: 70px;
+  }
+
+  .copyright{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-top: 0.5px solid white;
+    padding-top: 20px;
+    width: 100%;
+    background:black;
+  }
 }
