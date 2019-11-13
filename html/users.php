@@ -1,6 +1,17 @@
 <?php
 
-class User{
+  class User{
+
+    //Atributos
+        public $nombreYApellido;
+        public $nombreDeUsuario;
+        public $id;
+        public $email;
+        public $password;
+        public $foto;
+
+
+
 
   /*--------------------------------------------------
   -------------------responsabilidades----------------
@@ -14,32 +25,35 @@ class User{
         return $unUsuario;
       }
     }
-  };
+  }
 
   //Valido que alguien esté en la sesión
-  public function loguearse($_SESSION){
+  public function getUsuarioSiExisteSession(){
+    //Aca veo si la variable está seteada con algun valor
     if(isset($_SESSION)){
       session_start();
+      //llamo a la funcion getUserById que me trae un usuario por ID y le paso por parámetro la sesion de ese usuario
       $this->getUserById($_SESSION["userLogueado"]);
     }
-  };
+  }
 
+  
   private function eliminarSesionOCookie(){
     session_destroy();
     setcookie("usuario",null,time()-1);
     header("Location: login.php ");
-  };
+  }
 
   public function desloguearse(){
     if(isset($_POST["inputDeslogueo"])){
       $this->eliminarSesionOCookie();
       header('Location: /ECommerce-DH/html/login.php');
     }
-  };
+  }
 
   public function get_Contenido_Header_Segun_Estado_De_Logueo_Desktop(){
     echo (isset($_SESSION["userLogueado"])  || isset($_COOKIE["usuario"]))?"style='display:none;'":"";
-  };
+  }
 
   public function get_Contenido_Header_Segun_Estado_De_Logueo_Mobile(){
     echo isset($_SESSION["userLogueado"])?"style='display:none;'":"";

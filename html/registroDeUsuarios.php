@@ -1,4 +1,6 @@
 <?php
+include_once("DB.php");
+include_once("users.php");
 // inicializo las variables para errores
 $errorUsuario = "";
 $errorNombreYApellido = "";
@@ -51,35 +53,63 @@ if($_POST)
   if(!$errores)
   {
   //traigo los usuarios del json
-  $usuariosEnJSON = file_get_contents("..\json\usuarios.json");
+  //$usuariosEnJSON = file_get_contents("..\json\usuarios.json");
   //convierto el json en array
-  $usuarios = json_decode($usuariosEnJSON);
+  //$usuarios = json_decode($usuariosEnJSON);
   //agrego el nuevo usuario al array de la base de datos
   //validar que el usuario no exista
 
-    if(existeUsuario($_POST["usuario"]))
-    {
-      $errorUsuarioYaExiste="El nombre de usuario ya está en uso, por favor ingrese otro";
-    }else
-    {
-      echo "entra";
+    // if(existeUsuario($_POST["usuario"]))
+    // {
+    //   $errorUsuarioYaExiste="El nombre de usuario ya está en uso, por favor ingrese otro";
+    // }else
+    // {
+    //  echo "entra";
       //nos guardarmos los datos del post en un array
-      $usuario=[
-        "id"=> md5($_POST["usuario"]),
-        "usuario" => $_POST["usuario"],
-        "nombreYapellido" => $_POST["nombreYapellido"],
-        "email" => $_POST["email"],
-        "fotoPerfil"=>$_POST["fotoPerfil"],
-        "contrasenia" =>  $contrasenia
-      ];
-      $usuarios[] = $usuario;
+      // $usuario=[
+      //   "id"=> md5($_POST["usuario"]),
+      //   "usuario" => $_POST["usuario"],
+      //   "nombreYapellido" => $_POST["nombreYapellido"],
+      //   "email" => $_POST["email"],
+      //   "fotoPerfil"=>$_POST["fotoPerfil"],
+      //   "contrasenia" =>  $contrasenia
+      // ];
+     // $usuarios[] = $usuario;
       //convierto el nuevo array completo a json
-    $nuevosUsuariosEnJSON = json_encode($usuarios);
+    //$nuevosUsuariosEnJSON = json_encode($usuarios);
 
     //escribo el nuevo json en el archivo .json
-    file_put_contents("..\json\usuarios.json",$nuevosUsuariosEnJSON);
-    header('Location: /ECommerce-DH/html/home.php');
-    }
+    //file_put_contents("..\json\usuarios.json",$nuevosUsuariosEnJSON);
+
+
+    //}
+
+//------- Acá empieza la parte del sprint 3
+//crear un objeto usuario y un objeto base de datos
+$usuario= new User();
+$baseDeDatos= new DB();
+
+//Al objeto usuario le vamos cargando los datos recibidos desde la vista "Registro de usuarios"
+  $usuario->nombreDeUsuario= $_POST["usuario"];
+  $usuario->nombreYApellido= $_POST["nombreYapellido"];
+  $usuario->email= $_POST["email"];
+  // if(!is_null($_POST["fotoPerfil"])){
+  //   $usuario->foto=$_POST["fotoPerfil"];
+  // }else{
+  //   $usuario->foto="Sin foto";
+  // }
+  $usuario->password= password_hash($_POST["contrasenia"],PASSWORD_DEFAULT);
+
+//Agregamos el usuario en la base de datos.
+//$baseDeDatos->altaUsuario($usuario);
+
+
+var_dump($baseDeDatos->verPerfilDelUsuario(1));
+//Lo redirigimos al home
+header('Location: /ECommerce-DH/html/home.php');
+
+//----------FIN
+
   }
 }
 
