@@ -5,32 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Dosis|Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="../img/web_icon.ico">
   <link rel="stylesheet" href="../css/styles.css">
   <title>Lagard</title>
 </head>
-<body class="home">
+<body class="altas-de-pago">
 <?php include_once("header.php") ?>
 
-  <main class="main_FAQs">
-    <div class="contentPregFrecuentes">
-        <div class="col-12 row">
-            <div class="offset-lg-4 col-lg-4 offset-md-1 col-md-10 offset-sm-1 col-sm-10 preguntasFrecuentes">
-                <ul>
-                    <li> <h2>Preguntas Frecuentes</h2> </li>
-                    <li> <a href="dar-alta-de-pagos.php">¿Cómo dar de Alta un medio de pago?</a> </li>
-                    <li> <a href="extender-proteccion-de-auto.php">¿Cómo extender la protección del producto/vehículo?</a> </li>
-                    <li> <a href="problemas-en-compra.php">Tuve un problema con una compra</a> </li>
-                    <li> <a href="proteccion-al-comprador.php">¿Cómo protegemos a los compradores?</a></li>
-                    <li> <a href="compra-sin-respuesta.php">Realicé la compra y no recibí respuesta aún</a> </li>
-                    <li> <a href="dar-baja-de-pagos.php">¿Cómo dar de baja un medio de pago?</a> </li>
-                    <li> <a href="https://ac.b2binpay.com/site/login">Pagar con Bitcoins</a> </li>
-                </ul>
-            </div>
-        </div>
-       </div>
+  <main class="main_respuestas">
+    <div class="FAQs">
+      <br>
+      <br>
+      <br>
+     <h1 class="titulo-FAQs">¿Cómo dar de Alta un medio de pago?</h1>
+     <br>
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+     <br>
+     <h1 class="titulo-FAQs">¿Cómo dar de baja un medio de pago?</h1>
+     <br>
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+     <br>
+    <h1 class="titulo-FAQs">Realicé la compra y no recibí respuesta aún</h1>
+    <br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <br>
+    <h1 class="titulo-FAQs">¿Cómo extender la protección del producto/vehículo?</h1>
+    <br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <br>
+    <h1 class="titulo-FAQs">Tuve un problema con una compra</h1>
+    <br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <br>
+    <h1 class="titulo-FAQs">¿Cómo protegemos a los compradores?</h1>
+    <br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <br>
+    </div>
   </main>
-
 <?php include_once("footer.php") ?>
+
 </body>
 </html>
