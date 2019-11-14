@@ -45,7 +45,7 @@ if(isset($_POST["inputDeslogueo"]))
       <div class="dropdown menuLogueado" <?php echo (isset($_SESSION["userLogueado"])  || isset($_COOKIE["usuario"]))?"":"style='display:none;' "?>>
         <li class="dropbtn"  <?php echo (isset($_SESSION["userLogueado"])  || isset($_COOKIE["usuario"]))?"":"style='display:none;'" ?> >PERFIL
           <div class="dropdown-content">
-            <a href="#">Configurar</a>
+            <a href="editarPerfil.php">Configurar</a>
         </div>
         </li>
       </div>

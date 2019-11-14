@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <?php
+// include("users.php");
+include("DB.php");
+
+
+$userL= new User();
+$bd=new DB();
+
 $errorUsuario = "";
 $errorNoExisteUsuario = "";
 $errorUserYPsw="";
@@ -15,7 +22,7 @@ if($_POST)
     $errores = true;
   }else if($_POST["user"] != "" && $_POST["password"] != "")
   {
-    if(!validarUserYPsw($_POST["user"],$_POST["password"]))
+    if(!$bd->validarUserYPsw($_POST["user"],$_POST["password"]))
     {
       $errores=true;
     }
@@ -30,8 +37,7 @@ if($_POST)
         header('Location: /ECommerce-DH/html/home.php');
       }
       else{
-        loguearse($_POST["user"],$_POST["password"]);
-
+        $userL->loguearse($_POST["user"],$_POST["password"]);
       }
     }
 }
@@ -43,41 +49,9 @@ if($_POST)
   }
 
 }
-//Usuario---> Esto iria en una clase
-//Creo un metodo para validar el usuario y la contraseña
-function validarUserYPsw($unUser,$unaPsw)
-{
-  global $errorUserYPsw;
-  global $errorNoExisteUsuario;
-  $userCo;
-  //Recorro el json de usuarios y encontrar ese usuario y validar la psw 
-  $urlJsonUsuarios=file_get_contents("../json/usuarios.json");
-  $usuarios =json_decode($urlJsonUsuarios,true);
-    foreach ($usuarios as $unUsuario ) 
-    {
-      if($unUsuario["usuario"]==$unUser)
-      {
-        if(password_verify($unaPsw,$unUsuario["contrasenia"]))
-        {
-          return true;
-        }
-        $errorUserYPsw="No coincide el usuario y la contraseña, valide los datos ingresados";
-        return false;
-      }
-      $errores=true;
-    }
-  $errorNoExisteUsuario="No existe el usuario indicado, valide los datos ingresados";
-  return false;
-}
 
 //Metodo que sirve para crear la sesión y redirigirlo al home
-function loguearse($unUser,$unaPsw)  
-{
-   //crear la sesión 
-   session_start();
-   $_SESSION["userLogueado"]=idByUsername($unUser,$unaPsw);
-    header('Location: /ECommerce-DH/html/home.php');
-}
+
 
 //Metodo para obtener el ID de un usuario determinado, dado su nombre de usuario y psw
 function idByUsername($unUser,$unaPsw)
@@ -108,9 +82,9 @@ function idByUsername($unUser,$unaPsw)
   </head>
   <?php include_once("header.php") ?>
   <?php 
-      if( isset($_SESSION["userLogueado"]) || isset($_COOKIE["usuario"])){ 
-            header('Location: /ECommerce-DH/html/home.php');
-        }
+      // if( isset($_SESSION["userLogueado"]) || isset($_COOKIE["usuario"])){ 
+      //       header('Location: /ECommerce-DH/html/home.php');
+      //   }
   ?>
   <body id="bodyLogin">
     <div class="container">    

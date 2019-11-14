@@ -1,10 +1,18 @@
 <?php
+include("users.php");
+$usuarioLogueado=new User();
 include_once("users.php");
-$usuarioLogueado= new User();
-if(isset($_SESSION)){
-    session_start();
-    $usuarioLogueado=getUserById($_SESSION["userLogueado"]);
+if(isset($_SESSION))
+{
+  $baseDeDatos=new DB();
+  session_start();
+  if(isset($_SESSION["userLogueado"]) && isset($_SESSION["idUser"]))
+  {
+    $usuarioLogueado=$baseDeDatos->verPerfilDelUsuario((int) $_SESSION["idUser"]);
+  
   }
+  
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,8 +52,8 @@ if(isset($_SESSION)){
         </div>
         <div class="info-perfil">
             <img src="../img/sin-foto.jpg" alt="">
-            <h2><?=$usuarioLogueado;?></h2>
-            <p>Nombre de Usuario:</p> 
+            <h2><?=$usuarioLogueado->nombreYApellido;?></h2>
+            <p>Nombre de Usuario:<?=$usuarioLogueado->nombreDeUsuario;?></p> 
             <p>Nivel de comprador</p>
             <form action="">
                 <input type="button" value="Editar Foto">

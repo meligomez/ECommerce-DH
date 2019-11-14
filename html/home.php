@@ -1,5 +1,5 @@
 <?php
-
+include("DB.php");
 //Deberia ir en una clase usuario
 function getUserById($id)
 {
@@ -15,13 +15,21 @@ function getUserById($id)
 }
 //Fin Clase usuario
 //Valido que alguien esté en la sesión
+
 if(isset($_SESSION))
 {
+  $baseDeDatos=new DB();
   session_start();
-  $usuarioLogueado=getUserById($_SESSION["userLogueado"]);
+  if(isset($_SESSION["userLogueado"]) && isset($_SESSION["idUser"]))
+  {
+    $usuarioLogueado=$baseDeDatos->verPerfilDelUsuario((int) $_SESSION["idUser"]);
+  
+  }
+  
 }
 
 //Ya anda, deberíamos ver como mostrar los diferentes menúes según si está logueado o no.
+
 ?>
 
 
