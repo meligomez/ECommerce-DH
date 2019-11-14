@@ -47,6 +47,7 @@ include("users.php");
         $usuario->foto= $unUser["foto"];
         $usuario->nombreDeUsuario= $unUser["nombre_usuario"];
         $usuario->estado=$unUser["estado_usuario"];
+        return $usuario;
       }
       catch(Exception $e)
       {
@@ -90,6 +91,7 @@ include("users.php");
            return $usuario;
          }
         else{
+          return $usuario;
            echo 'No coincide el user con la contraseña';
         }
       }catch(Exception $e){
@@ -112,12 +114,10 @@ include("users.php");
         // $usuario->foto= $unUser["foto"];
         // $usuario->nombreDeUsuario= $unUser["nombre_usuario"];
         // $usuario->estado=$unUser["estado_usuario"];
-        var_dump($unaPsw);
-        var_dump($unUser["contrasenia"]);
-        exit();
          if(password_verify($unaPsw,$unUser["contrasenia"]))
          {
            return true;
+           exit();
          }
         else{
           //Esto esta MAL....

@@ -1,18 +1,20 @@
 <?php
-include("users.php");
-$usuarioLogueado=new User();
-include_once("users.php");
-if(isset($_SESSION))
-{
+include_once("header.php");
+// include_once("users.php");
+// $usuarioLogueado=new User();
+include_once("DB.php");
+// if(isset($_SESSION))
+// {
   $baseDeDatos=new DB();
-  session_start();
-  if(isset($_SESSION["userLogueado"]) && isset($_SESSION["idUser"]))
-  {
+//   session_start(); 
+//   if(isset($_SESSION["userLogueado"]) && isset($_SESSION["idUser"]))
+//   {
     $usuarioLogueado=$baseDeDatos->verPerfilDelUsuario((int) $_SESSION["idUser"]);
   
-  }
-  
-}
+//   }
+// }
+    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,12 +26,7 @@ if(isset($_SESSION))
     <link rel="stylesheet" href="../css/styles.css">
     <title>Editar Perfil</title>
 </head>
-<?php include_once("header.php") ?>
-  <?php 
-      if( isset($_SESSION["userLogueado"]) || isset($_COOKIE["usuario"])){ 
-            header('Location: /ECommerce-DH/html/home.php');
-        }
-  ?>
+<?php  ?>
 <body>
     <div class="content-edit-perfil">
         <div class="menu-edit-perfil">

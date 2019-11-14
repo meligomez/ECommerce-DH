@@ -50,7 +50,7 @@ if(isset($_POST["inputDeslogueo"]))
         </li>
       </div>
       <li><a href=""><img src="../img/carrito.png" alt="carro-de-compras"></a></li>
-      <li><a href=""><img src="../img/settings.png" alt="configuracion"></a></li>
+      <li><a href="editarPerfil.php"><img src="../img/settings.png" alt="configuracion"></a></li>
       <li id="logout" <?php echo (isset($_SESSION["userLogueado"]) || isset($_COOKIE["usuario"]) )?"":"style='display:none;'" ?>>
         <form action="" method="post">
           <input type="submit" value="" name="inputDeslogueo" style="background: none;border: none;background-image: url(../img/logout.png);
