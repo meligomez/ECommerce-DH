@@ -9,11 +9,13 @@ include_once("DB.php");
 //   session_start(); 
 //   if(isset($_SESSION["userLogueado"]) && isset($_SESSION["idUser"]))
 //   {
-    $usuarioLogueado=$baseDeDatos->verPerfilDelUsuario((int) $_SESSION["idUser"]);
+    $usuarioLogueado=$baseDeDatos->verPerfilDelUsuario(30);
   
 //   }
 // }
-    
+if($_POST){
+    $baseDeDatos->eliminarUser($_SESSION["idUser"]);
+}
 
 ?>
 <!DOCTYPE html>
@@ -113,7 +115,9 @@ include_once("DB.php");
                     <input type="submit" value="Guardar Cambios">
                 </div>
        </form>
-
+        <form action="editarPerfil.php" method="post">
+            <input type="submit" value="Eliminar Usuario">
+        </form>
     </div>
     <?php include_once("footer.php") ?>
 </body>

@@ -1,7 +1,7 @@
 <?php
 include("users.php");
   class DB{
-    
+
     private $conexion;
 
     public function __construct(){
@@ -11,7 +11,7 @@ include("users.php");
         $opciones = array(
           PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
       );
-        
+
         $this->conexion = new PDO($dsn,$user,$pass,$opciones);
       //   var_dump($this->conexion);
     }
@@ -24,23 +24,23 @@ include("users.php");
       $consulta = $this->conexion->prepare("INSERT INTO ecomerce.usuarios (nombre_apellido,email,contrasenia,foto,nombre_usuario,estado_usuario) VALUES
                                                                    (:nombre1 ,:email1 ,:contrasenia,:foto,:nombreUsuario,:estado )");
 
-      
+
         $consulta->bindValue(":nombre1",$unUsuario->nombreYApellido);
         $consulta->bindValue(":email1",$unUsuario->email);
         $consulta->bindValue(":contrasenia",password_hash($unUsuario->password,PASSWORD_DEFAULT));
         $consulta->bindValue(":foto",$unUsuario->foto);
         $consulta->bindValue(":nombreUsuario",$unUsuario->nombreDeUsuario);
         $consulta->bindValue(":estado",TRUE);
-       
-        $consulta->execute(); 
+
+        $consulta->execute();
        // return $consulta->lastInsertId();
     }
 
-    public function verPerfilDelUsuario($id){ 
+    public function verPerfilDelUsuario($id){
       try{
         $consulta = $this->conexion->query("SELECT * FROM ecomerce.usuarios WHERE idUsuario = ". $id);
         $unUser= $consulta->fetch(PDO::FETCH_ASSOC);
-        $usuario->id=$unUser["idUsuario"];                    
+        $usuario->id=$unUser["idUsuario"];
         $usuario->nombreYApellido=$unUser["nombre_apellido"];
         $usuario->email=$unUser["email"];
         $usuario->password=$unUser["contrasenia"];
@@ -77,9 +77,10 @@ include("users.php");
      {
        $usuario= new User();
       try{
-        $consulta = $this->conexion->query("SELECT * FROM ecomerce.usuarios WHERE nombre_usuario = '". $unUser . "'");
+        $consulta = $this->conexion->query("SELECT * FROM ecomerce.usuarios WHERE estado_usuario=1 and nombre_usuario = '". $unUser . "'");
+        //var_dump($consulta); exit;
         $unUser=$consulta->fetch(PDO::FETCH_ASSOC);
-        $usuario->id=$unUser["idUsuario"];                    
+        $usuario->id=$unUser["idUsuario"];
         $usuario->nombreYApellido=$unUser["nombre_apellido"];
         $usuario->email=$unUser["email"];
         $usuario->password=$unUser["contrasenia"];
@@ -98,7 +99,7 @@ include("users.php");
        echo 'Excepción capturada: ',  $e->getMessage(), "\n";
       }
 
-        
+
       }
 
       function validarUserYPsw($unUser,$unaPsw)
@@ -107,7 +108,7 @@ include("users.php");
       try{
         $consulta = $this->conexion->query("SELECT * FROM ecomerce.usuarios WHERE nombre_usuario = '". $unUser . "'");
         $unUser=$consulta->fetch(PDO::FETCH_ASSOC);
-        // $usuario->id=$unUser["idUsuario"];                    
+        // $usuario->id=$unUser["idUsuario"];
         // $usuario->nombreYApellido=$unUser["nombre_apellido"];
         // $usuario->email=$unUser["email"];
         // $usuario->password=$unUser["contrasenia"];
@@ -126,6 +127,16 @@ include("users.php");
       }catch(Exception $e){
        echo 'Excepción capturada: ',  $e->getMessage(), "\n";
       }
+      }
+
+      public function eliminarUser($id){
+        try{
+          $consulta = $this->conexion->prepare("UPDATE usuarios SET estado_usuario=0 WHERE idUsuario = :id ");
+          $consulta->bindValue(":id",$id);
+          $consulta->execute();
+        }catch(Exception $e){
+         echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+        }
       }
 
   }
