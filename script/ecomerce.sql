@@ -114,7 +114,7 @@ CREATE TABLE `usuarios` (
   `idUsuario` int(11) NOT NULL,
   `nombre_apellido` varchar(200) NOT NULL,
   `email` varchar(200) NOT NULL,
-  `contrasenia` varchar(11) CHARACTER SET utf16 COLLATE utf16_spanish_ci NOT NULL,
+  `contrasenia` varchar(500) CHARACTER SET utf16 COLLATE utf16_spanish_ci NOT NULL,
   `foto` varchar(1500) DEFAULT NULL,
   `nombre_usuario` varchar(50) NOT NULL,
   `estado_usuario` tinyint(1) NOT NULL
