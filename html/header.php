@@ -34,7 +34,8 @@ if(isset($_POST["inputDeslogueo"]))
         <button id="options" class="dropdown-item" type="button"><a href="home.php">VEHICULOS</a></button>
         <button id="options" class="dropdown-item" type="button"><a href="#">NOSOTROS</a></button>
         <button id="options" class="dropdown-item" type="button"><a href="#">COMPRA ACA</a></button>
-        <button id="options" class="dropdown-item" type="button"><a href="#">AJUSTES</a></button>
+        <button id="options" class="dropdown-item" type="button"><a href="editarPerfil.php  ">AJUSTES</a></button>
+        <button id="options" class="dropdown-item" type="button"><?php echo isset($_SESSION["userLogueado"])?"":"style='display:none;'" ?><a href="login.php">CERRAR SESION</a></button>
       </div>
     </div>
     <ul class="lista_menu">

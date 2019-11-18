@@ -60,9 +60,20 @@ if($_POST)
       $usuario->nombreDeUsuario= $_POST["usuario"];
       $usuario->nombreYApellido= $_POST["nombreYapellido"];
       $usuario->email= $_POST["email"];
-      if(isset($_POST["fotoPerfil"]))
+      if(isset($_FILES))
       {
-        $usuario->foto=$_POST["fotoPerfil"];
+          $tipoImagen = $_FILES['avatar']['type'];
+          $avatar = "";
+          if( $tipoImagen == 'image/png' ||
+              $tipoImagen == 'image/jpg' ||
+              $tipoImagen == 'image/jpeg' ||
+              $tipoImagen == 'image/gif'){
+            $ext = pathinfo($_FILES['avatar']['name'],  PATHINFO_EXTENSION);
+            $avatar = '../fotos/' . $_POST['usuario'] . '.' . $ext;
+              move_uploaded_file($_FILES['avatar']['tmp_name'], $avatar);
+            }
+          var_dump($avatar);
+          $usuario->foto=$avatar;
       }
       else
       {
@@ -133,7 +144,7 @@ function existeUsuario($userABuscar){
               <span style="color:red;font-size:12px;display:block;"><?=$errorEmail;?></span>
             </p>
             <p>
-            <input type="file" name="fotoPerfil" placeholder="Ingrese su foto de perfil">
+            <input type="file" name="avatar" id="avatar" placeholder="Ingrese su foto de perfil">
            <p>
             <p>
               <img src="../img/lock.svg" alt="" width="6%">

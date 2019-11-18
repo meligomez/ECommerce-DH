@@ -566,6 +566,9 @@ main .registroDeUsuario p label{
  .content-edit-perfil{
    font-family:  'Karla', sans-serif;
  }
+ .editarPerfil{
+  background-image: url("../img/backHome.jpg");
+ }
 .menu-edit-perfil{
   float:left;
 }
@@ -573,26 +576,40 @@ main .registroDeUsuario p label{
   float: left;
   text-align: center;
   margin: center;
-  border: 1px solid;
+  width: 100%;
+  background-color: rgba(255,255,255,0.2);
 
 }
 .info-perfil img{
     width: 100%;
-    height: 100%;
+    height: 50%;
 }
 
 .detalle-perfil, .detalle-preferencias, .detalle-medio-pago{
   float: left;
-  border: 1px solid;
   text-align: center;
   padding-top: 5%;
   margin-top:5%;
   align-items: center;
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 2%;
 
 }
 .detalle-perfil ul{
   padding: 0px 0px;
+ 
 }
+.detalle-perfil ul li input, .info-perfil .nombreApellido{
+  width: 60%;
+  border: none;
+  background: none;
+  border-bottom: 1px solid;
+  text-align: center
+}
+.detalle-perfil ul li{
+  padding-bottom: 3%;
+}
+
 .detalle-preferencias, .detalle-medio-pago{
   width: 100%;
 }
@@ -602,7 +619,6 @@ main .registroDeUsuario p label{
 .content-edit-perfil{
   width: 100%;
   height: 100%;
-  overflow: hidden;
   margin: auto;
 }
 .user-editar-perfil, .user-editar-preferencias, .user-medio-pago{
@@ -621,6 +637,29 @@ main .registroDeUsuario p label{
   margin: auto;
   margin-bottom: 2%;
 }
+.btn-editar-perfil, .btn-eliminar-perfil{
+  width: 50%;
+  float: left;
+  text-align: center;
+ }
+ .btn-editar-perfil hr, .btn-eliminar-perfil hr{
+   width: 80%;
+   background: -webkit-linear-gradient(left, red, blue, #82B2EE);
+   background: -moz-linear-gradient(left, red, blue, #82B2EE);
+   background: -o-linear-gradient(left, red, blue, #82B2EE);
+ }
+.btn-upload-image{
+  width: 45%;
+
+}  
+.v1{
+      height: 5%;
+      border-left: 2px solid;
+      position: absolute;
+      left: 51%;
+      margin-left: -3px;
+}
+
 
   /*********************************/
 /***    Fin Editar Perfil      ***/
@@ -659,11 +698,44 @@ main .registroDeUsuario p label{
   .login-content-form{
     padding-top: 80px;
   }
+  .info-perfil img{
+    width: 350px;
+    height: 350px;
+  }
+  .content-edit-perfil{
+    /* max-width: 500px; */
+    height: 100%;
+    margin: auto;
+  }
  }
  @media (min-width:991px){
  
   .login-content-form {
     padding-top: 9%;
+  }
+  .content-edit-perfil{
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    padding-top: 10%;
+    flex-direction: row;
+    justify-content: space-around;
+    /* align-items: center; */
+  }
+  .menu-edit-perfil{
+    display: none;
+  }
+  .info-perfil, .detalle-perfil, .detalle-preferencias, .detalle-medio-pago{
+    max-width: 500px;
+    display: table;
+  }
+  .detalle-perfil, .detalle-preferencias, .detalle-medio-pago{
+    max-width: 700px;
+  }
+  .contenedor-form-edit{
+    display: flex;
+    flex-direction: column;
+    display: table;
   }
  }
  /*
@@ -767,7 +839,7 @@ main .registroDeUsuario p label{
 
   #options a{
     font-weight: bolder;
-    text-decoration: ;
+
     color: white;
   }
 

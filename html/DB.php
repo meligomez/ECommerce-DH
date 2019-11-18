@@ -37,6 +37,7 @@ include("users.php");
     }
 
     public function verPerfilDelUsuario($id){
+      $usuario= new User();
       try{
         $consulta = $this->conexion->query("SELECT * FROM ecomerce.usuarios WHERE idUsuario = ". $id);
         $unUser= $consulta->fetch(PDO::FETCH_ASSOC);
